@@ -1,0 +1,9 @@
+<div class="tickets-list">
+  <app-ticket-item 
+    *ngFor="let ticket of tickets"
+    [code]="ticket.code"
+    [price]="ticket.price"
+    [selected]="ticket.selected"
+    (selectionChange)="onTicketSelectionChange(ticket, $event)">
+  </app-ticket-item>
+</div>

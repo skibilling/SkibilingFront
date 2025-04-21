@@ -1,0 +1,8 @@
+<nav class="progress-nav">
+  <app-nav-item 
+    *ngFor="let step of steps"
+    [icon]="step.icon"
+    [label]="step.label"
+    [active]="step.active">
+  </app-nav-item>
+</nav>

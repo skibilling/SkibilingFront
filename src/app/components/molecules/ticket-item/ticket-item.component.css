@@ -1,0 +1,21 @@
+.ticket-item {
+  display: flex;
+  padding: 15px;
+  border-bottom: 1px solid #e1e1e1;
+  align-items: center;
+  cursor: pointer;
+}
+
+.ticket-item:last-child {
+  border-bottom: none;
+}
+
+.ticket-code {
+  flex-grow: 1;
+  font-weight: 500;
+  margin-left: 20px;
+}
+
+.ticket-price {
+  font-weight: 500;
+}

@@ -1,0 +1,35 @@
+<div class="tickets-container">
+  <app-progress-nav [steps]="navSteps"></app-progress-nav>
+
+  <h1 class="section-title">Boletos cargados</h1>
+
+  <app-tickets-list 
+    [tickets]="tickets"
+    (ticketSelection)="onTicketSelection($event)">
+  </app-tickets-list>
+
+  <h2 class="section-title">Boletos</h2>
+
+  <app-custom-button 
+    type="primary" 
+    text="Subir foto"
+    icon="fas fa-camera"
+    (buttonClick)="uploadTicketPhoto()">
+  </app-custom-button>
+
+  <app-divider text="o prefieres"></app-divider>
+
+  <app-custom-button 
+    type="secondary" 
+    text="Manual"
+    (buttonClick)="goToManualEntry()">
+  </app-custom-button>
+
+  <div class="navigation-buttons">
+    <app-custom-button 
+      type="accent" 
+      text="Siguiente"
+      (buttonClick)="goToNextStep()">
+    </app-custom-button>
+  </div>
+</div>

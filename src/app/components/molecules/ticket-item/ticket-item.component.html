@@ -1,0 +1,8 @@
+<div class="ticket-item">
+  <app-check-selector 
+    [selected]="selected" 
+    (selectionChange)="onSelectionChange($event)">
+  </app-check-selector>
+  <div class="ticket-code">{{ code }}</div>
+  <div class="ticket-price">{{ price }}</div>
+</div>
