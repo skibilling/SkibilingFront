@@ -1,0 +1,18 @@
+<a
+  [routerLink]="routerLink"
+  [href]="!routerLink ? href : null"
+  [target]="openInNewTab ? '_blank' : '_self'"
+  class="link-container"
+  [class.with-icon]="icon"
+>
+  <app-svg-icon
+    *ngIf="icon"
+    [icon]="icon"
+    [color]="iconColor"
+    width="24px"
+    height="24px"
+    class="link-icon"
+  >
+  </app-svg-icon>
+  <span class="link-text">{{ text }}</span>
+</a>

@@ -7,55 +7,8 @@ import { SvgIconComponent } from '../svg-icon/svg-icon.component';
   selector: 'app-link',
   standalone: true,
   imports: [CommonModule, RouterModule, SvgIconComponent],
-  template: `
-    <a
-      [routerLink]="routerLink"
-      [href]="!routerLink ? href : null"
-      [target]="openInNewTab ? '_blank' : '_self'"
-      class="link-container"
-      [class.with-icon]="icon"
-    >
-      <app-svg-icon
-        *ngIf="icon"
-        [icon]="icon"
-        [color]="iconColor"
-        width="24px"
-        height="24px"
-        class="link-icon"
-      >
-      </app-svg-icon>
-      <span class="link-text">{{ text }}</span>
-    </a>
-  `,
-  styles: [
-    `
-      .link-container {
-        display: inline-flex;
-        align-items: center;
-        text-decoration: none;
-        color: #f07718;
-        font-size: 16px;
-        padding: 8px 16px;
-        border-radius: 5px;
-        border: 1px dashed #f07718;
-        background-color: rgba(240, 119, 24, 0.05);
-        transition: background-color 0.2s;
-        cursor: pointer;
-      }
-
-      .link-container:hover {
-        background-color: rgba(240, 119, 24, 0.1);
-      }
-
-      .link-icon {
-        margin-right: 8px;
-      }
-
-      .link-text {
-        font-weight: 500;
-      }
-    `,
-  ],
+  templateUrl: './link.component.html',
+  styleUrls: ['./link.component.css'],
 })
 export class LinkComponent implements OnInit {
   @Input() text: string = '';
