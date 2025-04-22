@@ -1,0 +1,116 @@
+.select-field-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  padding: 16px;
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 12px;
+}
+
+.icon-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 24px;
+  height: 24px;
+}
+
+.icon-wrapper img {
+  width: 24px;
+  height: 24px;
+}
+
+.content-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+/* Estilos por defecto (sin selección) */
+.field-label {
+  font-size: 14px;
+  color: #ADADAD;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.required {
+  color: #FF6B00;
+  margin-left: 2px;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+select {
+  width: 100%;
+  padding: 4px 0;
+  border: none;
+  background: transparent;
+  font-size: 16px;
+  color: #ADADAD;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  line-height: 1.5;
+}
+
+select:focus {
+  outline: none;
+}
+
+/* Estilos cuando hay valor seleccionado */
+.has-selection .field-label {
+  color: #FF6B00;
+}
+
+.has-selection select {
+  color: #FF6B00;
+  font-weight: 500;
+}
+
+/* Estilos para las opciones del select */
+select option {
+  color: #2D3748;
+  background: white;
+  padding: 12px 16px;
+  font-size: 16px;
+  border-bottom: 1px solid #E2E8F0;
+}
+
+select option:hover {
+  background-color: #F7FAFC;
+}
+
+select option:checked {
+  background-color: #FFF5E6;
+  color: #f07718;
+  font-weight: 500;
+}
+
+.chevron-icon {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.chevron-icon img {
+  width: 24px;
+  height: 24px;
+  transition: transform 0.2s ease;
+}

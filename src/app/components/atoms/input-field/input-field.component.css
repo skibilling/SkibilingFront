@@ -1,0 +1,71 @@
+.input-field-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+    padding: 16px;
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+  }
+  
+  .icon-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 24px;
+  }
+  
+  .content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .field-label {
+    font-size: 14px;
+    color: #ADADAD;
+    font-weight: 400;
+    line-height: 1;
+  }
+  
+  .required {
+    color: #FF6B00;
+    margin-left: 2px;
+  }
+  
+  .input-wrapper {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  
+  input {
+    width: 100%;
+    padding: 4px 0;
+    border: none;
+    background: transparent;
+    font-size: 16px;
+    color: #ADADAD;
+    outline: none;
+    line-height: 1.5;
+  }
+  
+  input::placeholder {
+    color: #ADADAD;
+  }
+  span{
+    color: #ADADAD;
+  }
+  /* Estilos cuando hay valor seleccionado */
+  .has-selection .field-label {
+    color: #f07718;
+  }
+  
+  .has-selection input {
+    color: #f07718;
+    font-weight: 500;
+  }

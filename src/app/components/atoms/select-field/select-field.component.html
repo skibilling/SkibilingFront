@@ -1,1 +1,31 @@
-<p>select-field works!</p>
+<div class="select-field-container" [class.has-selection]="selectedValue">
+  <div class="icon-wrapper">
+    <app-svg-icon 
+      [icon]="icon" 
+      [color]="selectedValue ? '#FF6B00' : '#ADADAD'"
+      width="24px"
+      height="24px">
+    </app-svg-icon>
+  </div>
+  <div class="content-wrapper">
+    <label class="field-label">
+      {{ label }} <!---<span class="required" *ngIf="required">*</span>!--->
+    </label>
+    <div class="select-wrapper" (click)="toggleDropdown()">
+      <select 
+        [(ngModel)]="selectedValue" 
+        [class.has-value]="selectedValue">
+        <option value="" disabled selected hidden>{{ placeholder }}</option>
+        <option *ngFor="let opt of options" [value]="opt.value">{{ opt.label }}</option>
+      </select>
+      <div class="chevron-icon">
+        <app-svg-icon 
+          [icon]="isDropdownOpen ? 'ChevronUp.svg' : 'ChevronDown.svg'" 
+          [color]="selectedValue ? '#f07718' : '#ADADAD'"
+          width="24px"
+          height="24px">
+        </app-svg-icon>
+      </div>
+    </div>
+  </div>
+</div>

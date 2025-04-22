@@ -152,4 +152,42 @@
   <app-link text="Example" icon="Info.svg" href="#"> </app-link>
 
   <app-link text="Ayuda" icon="House.svg" [routerLink]="['/help']"> </app-link>
+
+
+  <app-select-field
+  label="Forma de pago *"
+  placeholder="Seleccionar Metodo de Pago"
+  [options]="paymentMethodOptions"
+  icon="CircleDollarSign.svg"
+
+></app-select-field>
+
+<app-select-field
+  label="USO DE CFDI *"
+  placeholder="Seleccionar el uso de CFDI"
+  [options]="CFDIUsesOptions"
+  icon="House.svg"
+></app-select-field>
+
+<app-select-field
+  label="Tipos de Boletos *"
+  placeholder="Seleccionar el tipo de boleto"
+  [options]="ticketTypeOptions"
+  icon="Bus.svg"
+></app-select-field>
+
+<app-custom-button  
+  type="primary"
+  text="Guardar"
+  (buttonClick)="getForms()"
+>
+</app-custom-button>
+
+<app-input-field
+  label="Nombre"
+  placeholder="Ingresa tu nombre"
+  icon="User.svg"
+  [required]="true">
+</app-input-field>
+
 </div>

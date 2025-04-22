@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ViewChildren, QueryList } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import {
@@ -12,7 +12,8 @@ import {
 import { CustomButtonComponent } from '../../atoms/custom-button/custom-button.component';
 import { DividerComponent } from '../../atoms/divider/divider.component';
 import { LinkComponent } from '../../atoms/link/link.component';
-
+import { SelectFieldComponent } from '../../atoms/select-field/select-field.component';
+import { InputFieldComponent } from '../../atoms/input-field/input-field.component';
 @Component({
   selector: 'app-tickets-page',
   standalone: true,
@@ -24,6 +25,8 @@ import { LinkComponent } from '../../atoms/link/link.component';
     CustomButtonComponent,
     DividerComponent,
     LinkComponent,
+    SelectFieldComponent,
+    InputFieldComponent
   ],
   templateUrl: './tickets-page.component.html',
   styleUrl: './tickets-page.component.css',
@@ -43,7 +46,21 @@ export class TicketsPageComponent {
     { code: 'TOKEN', price: '$100.00', selected: false },
     { code: 'TOKEN', price: '$100.00', selected: false },
   ];
-
+  CFDIUsesOptions = [
+    { value: 'G01', label: 'Adquisición de mercancías' },
+    { value: 'G02', label: 'Devoluciones, descuentos o bonificaciones' },
+    { value: 'G03', label: 'Gastos en general' }
+  ]
+  ticketTypeOptions = [
+    { value: 'trips', label: 'Autobuses'},
+    { value: 'delivery', label: 'Paqueteria' },
+    { value: 'food',label: 'Comida'},
+  ]
+  paymentMethodOptions = [
+    { value: '01', label: 'Efectivo' },
+    { value: '02', label: 'Cheque nominativo' },
+    { value: '03', label: 'Transferencia electrónica de fondos' },
+    { value: '04', label: 'Tarjeta de crédito' }]
   onTicketSelection(event: { ticket: Ticket; selected: boolean }): void {
     console.log(
       `Ticket ${event.ticket.code} selection changed to ${event.selected}`
