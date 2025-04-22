@@ -1,0 +1,20 @@
+.hint-box {
+    display: flex;
+    flex-direction: row;
+    align-items: left;
+    justify-content: left;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 12px;
+    color: #888;
+}
+
+.hint-box img {
+    width: 14px;
+    height: 14px;
+}
+
+.hint-box span {
+    font-size: 12px;
+    color: #888;
+}

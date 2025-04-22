@@ -1,0 +1,30 @@
+<div [ngClass]="dropBoxClasses">
+  <!-- Si hay archivo cargado -->
+  <ng-container *ngIf="shouldShowFilename; else showUploadLabel">
+    <div class="upload-label">
+      <img src="assets/CircleCheckBig.svg" alt="Upload" style="stroke-linecap:orange"/>
+      {{ filename }}
+    </div>
+  </ng-container>
+  
+  <!-- Si NO hay archivo cargado -->
+  <ng-template #showUploadLabel>
+    <label [for]="icon" class="upload-label" *ngIf="!isDisabled">
+      <img [src]="iconImagePath" alt="Upload"/>
+      <span>{{ uploadLabelText }}</span>
+      <input
+        type="file"
+        class="upload-input"
+        [id]="icon"
+        [accept]="acceptedFileType"
+        [disabled]="isDisabled"
+      />
+    </label>
+  </ng-template>
+  
+  <!-- Hint dinámico según tipo de archivo -->
+  <app-hint *ngIf="!isDisabled" [information]="hintText"></app-hint>
+</div>
+  
+  
+  

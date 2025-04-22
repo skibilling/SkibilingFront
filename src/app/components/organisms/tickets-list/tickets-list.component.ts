@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TicketItemComponent } from '../../molecules/ticket-item/ticket-item.component';
+import { DropBoxComponent } from "../../atoms/drop-box/drop-box.component";
 
 export interface Ticket {
   code: string;
@@ -11,7 +12,7 @@ export interface Ticket {
 @Component({
   selector: 'app-tickets-list',
   standalone: true,
-  imports: [CommonModule, TicketItemComponent],
+  imports: [CommonModule, TicketItemComponent, DropBoxComponent],
   templateUrl: './tickets-list.component.html',
   styleUrl: './tickets-list.component.css'
 })

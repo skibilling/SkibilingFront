@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { InvoicePageComponent } from './components/pages/invoice-page/invoice-page.component';
 import { TicketsPageComponent } from './components/pages/tickets-page/tickets-page.component';
+import { DropBoxComponent } from "./components/atoms/drop-box/drop-box.component";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InvoicePageComponent, TicketsPageComponent],
+  imports: [RouterOutlet, InvoicePageComponent, TicketsPageComponent, DropBoxComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
