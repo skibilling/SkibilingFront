@@ -1,0 +1,17 @@
+<div class="stepper-container">
+  <div class="steps-wrapper">
+    <ng-container *ngFor="let step of steps; let i = index">
+      <app-step
+        [stepType]="step.type"
+        [isActive]="isStepActive(i)"
+        [isCompleted]="isStepCompleted(i)"
+        [allCompleted]="isAllCompleted()">
+      </app-step>
+      <div class="connector" 
+           *ngIf="i < steps.length - 1"
+           [class.active]="isStepCompleted(i)"
+           [class.all-completed]="isAllCompleted()">
+      </div>
+    </ng-container>
+  </div>
+</div>

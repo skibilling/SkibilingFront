@@ -1,0 +1,32 @@
+.step-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.step-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #E0E0E0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.step-circle app-svg-icon {
+    display:  flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.step-container.active .step-circle,
+.step-container.completed .step-circle {
+  background-color: #f07718;
+}
+
+.step-container.all-completed .step-circle {
+  background-color: #4CAF50;
+}

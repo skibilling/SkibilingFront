@@ -176,12 +176,6 @@
   icon="Bus.svg"
 ></app-select-field>
 
-<app-custom-button  
-  type="primary"
-  text="Guardar"
-  (buttonClick)="getForms()"
->
-</app-custom-button>
 
 <app-input-field
   label="Nombre"
@@ -190,4 +184,20 @@
   [required]="true">
 </app-input-field>
 
+
+<app-stepper
+[currentStep]="1"
+></app-stepper>
+<app-stepper
+[currentStep]="2"
+></app-stepper>
+<app-stepper
+[currentStep]="3"
+></app-stepper>
+<app-stepper
+[currentStep]="4"
+></app-stepper>
+<app-stepper
+[currentStep]="5"
+></app-stepper>
 </div>

@@ -1,0 +1,10 @@
+<div class="step-container" [class.active]="isActive" [class.completed]="isCompleted" [class.all-completed]="allCompleted">
+  <div class="step-circle">
+    <app-svg-icon 
+      [icon]="getStepIcon()"
+      [color]="isActive || isCompleted || allCompleted ? '#FFFFFF' : '#ADADAD'"
+      width="24px"
+      height="24px">
+    </app-svg-icon>
+  </div>
+</div>
