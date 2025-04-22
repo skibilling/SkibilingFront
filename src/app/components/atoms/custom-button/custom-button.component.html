@@ -1,7 +1,19 @@
-<button 
-  [class]="'custom-button ' + type" 
+<button
+  [class]="'custom-button ' + type"
   [disabled]="disabled"
-  (click)="onClick()">
-  <i *ngIf="icon" class="{{icon}} button-icon"></i>
+  (click)="onClick()"
+>
+  <!-- Mantenemos soporte para iconos FontAwesome -->
+  <i *ngIf="icon && !useAssetIcon" class="{{ icon }} button-icon"></i>
+
+  <!-- Ahora usamos nuestro componente SVG -->
+  <app-svg-icon
+    *ngIf="useAssetIcon && icon"
+    [icon]="icon"
+    [color]="textColor"
+    class="button-icon"
+  >
+  </app-svg-icon>
+
   <span>{{ text }}</span>
 </button>

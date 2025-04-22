@@ -1,35 +1,155 @@
 <div class="tickets-container">
+  <!-- <div class="tickets-container">
   <app-progress-nav [steps]="navSteps"></app-progress-nav>
 
   <h1 class="section-title">Boletos cargados</h1>
 
-  <app-tickets-list 
+  <app-tickets-list
     [tickets]="tickets"
-    (ticketSelection)="onTicketSelection($event)">
+    (ticketSelection)="onTicketSelection($event)"
+  >
   </app-tickets-list>
 
   <h2 class="section-title">Boletos</h2>
 
-  <app-custom-button 
-    type="primary" 
+  <app-custom-button
+    type="primary"
     text="Subir foto"
     icon="fas fa-camera"
-    (buttonClick)="uploadTicketPhoto()">
+    (buttonClick)="uploadTicketPhoto()"
+  >
   </app-custom-button>
 
   <app-divider text="o prefieres"></app-divider>
 
-  <app-custom-button 
-    type="secondary" 
+  <app-custom-button
+    type="secondary"
     text="Manual"
-    (buttonClick)="goToManualEntry()">
+    (buttonClick)="goToManualEntry()"
+  >
   </app-custom-button>
 
   <div class="navigation-buttons">
-    <app-custom-button 
-      type="accent" 
+    <app-custom-button
+      type="primary"
       text="Siguiente"
-      (buttonClick)="goToNextStep()">
+      (buttonClick)="goToNextStep()"
+    >
     </app-custom-button>
-  </div>
+  </div> -->
+
+  <!-- Ejemplos de todos los tipos de botones -->
+  <h2 class="section-title">Ejemplos de Botones</h2>
+
+  <app-custom-button
+    type="primary"
+    text="Primario"
+    (buttonClick)="accionPrimaria()"
+  >
+  </app-custom-button>
+
+  <app-custom-button
+    type="secondary"
+    text="Secundario"
+    (buttonClick)="accionSecundaria()"
+  >
+  </app-custom-button>
+
+  <app-custom-button
+    type="tertiary"
+    text="Terciario"
+    (buttonClick)="accionTerciaria()"
+  >
+  </app-custom-button>
+
+  <!-- Ejemplos con iconos de assets -->
+  <h2 class="section-title">Botones con iconos de assets</h2>
+
+  <app-custom-button
+    type="primary"
+    text="Primario con icono"
+    icon="Bus.svg"
+    [useAssetIcon]="true"
+    (buttonClick)="accionPrimaria()"
+  >
+  </app-custom-button>
+
+  <app-custom-button
+    type="secondary"
+    text="Secundario con icono"
+    icon="Info.svg"
+    [useAssetIcon]="true"
+    (buttonClick)="accionSecundaria()"
+  >
+  </app-custom-button>
+
+  <app-custom-button
+    type="tertiary"
+    text="Terciario con icono"
+    icon="User.svg"
+    [useAssetIcon]="true"
+    (buttonClick)="accionTerciaria()"
+  >
+  </app-custom-button>
+
+  <!-- Botones deshabilitados -->
+  <h2 class="section-title">Botones Deshabilitados</h2>
+
+  <app-custom-button
+    type="primary"
+    text="Primario Deshabilitado"
+    [disabled]="true"
+  >
+  </app-custom-button>
+
+  <app-custom-button
+    type="secondary"
+    text="Secundario Deshabilitado"
+    [disabled]="true"
+  >
+  </app-custom-button>
+
+  <app-custom-button
+    type="tertiary"
+    text="Terciario Deshabilitado"
+    [disabled]="true"
+  >
+  </app-custom-button>
+
+  <!-- Botones deshabilitados con iconos -->
+  <h2 class="section-title">Botones Deshabilitados con Iconos</h2>
+
+  <app-custom-button
+    type="primary"
+    text="Primario Deshabilitado"
+    icon="Bus.svg"
+    [useAssetIcon]="true"
+    [disabled]="true"
+  >
+  </app-custom-button>
+
+  <app-custom-button
+    type="secondary"
+    text="Secundario Deshabilitado"
+    icon="Camera.svg"
+    [useAssetIcon]="true"
+    [disabled]="true"
+  >
+  </app-custom-button>
+
+  <app-custom-button
+    type="tertiary"
+    text="Terciario Deshabilitado"
+    icon="User.svg"
+    [useAssetIcon]="true"
+    [disabled]="true"
+  >
+  </app-custom-button>
+
+  <!-- Ejemplos de uso del componente Link -->
+  <h2 class="section-title">Ejemplos de Links</h2>
+
+  <app-link text="Example" icon="Info.svg" href="#"> </app-link>
+
+  <app-link text="Ayuda" icon="House.svg" [routerLink]="['/help']"> </app-link>
 </div>
