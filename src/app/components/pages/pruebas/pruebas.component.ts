@@ -7,11 +7,15 @@ import { StatusBillingComponent } from '../../atoms/status-billing/status-billin
 import { StatusTicketsComponent } from '../../atoms/status-tickets/status-tickets.component';
 import { NavigationBarComponent } from "../../molecules/navigation-bar/navigation-bar.component";
 import { LandingComponent } from '../landing/landing.component';
+import { DividerComponent } from "../../atoms/divider/divider.component";
+import { TicketsPageComponent } from '../tickets-page/tickets-page.component';
+import { ContentFiscalDataComponent } from "../../organisms/content-fiscal-data/content-fiscal-data.component";
+import { TicketItemComponent } from "../../molecules/ticket-item/ticket-item.component";
 
 @Component({
   selector: 'app-pruebas',
   standalone: true,
-  imports: [CommonModule, SvgIconComponent, HintComponent, DropBoxComponent, StatusBillingComponent, StatusTicketsComponent, NavigationBarComponent, LandingComponent],
+  imports: [CommonModule, SvgIconComponent, HintComponent, DropBoxComponent, StatusBillingComponent, StatusTicketsComponent, NavigationBarComponent, LandingComponent, DividerComponent, TicketsPageComponent, ContentFiscalDataComponent, TicketItemComponent],
   templateUrl: './pruebas.component.html',
   styleUrls: ['./pruebas.component.css']
 })

@@ -1,0 +1,19 @@
+.fiscal-data-container {
+  display: flex;
+  flex-direction: column;
+  padding: 24px 16px 8px 16px;
+}
+
+.fiscal-data-container > div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.fiscal-data-container > app-divider {
+  margin: 16px 0;
+}
+
+.fiscal-data-container > div:nth-child(3) {
+  margin-bottom: 16px;
+}
