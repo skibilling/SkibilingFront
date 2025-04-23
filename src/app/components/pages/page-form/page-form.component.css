@@ -1,0 +1,8 @@
+.custom-bottom-sheet .mat-bottom-sheet-container {
+    bottom: 0 !important; /* anclar en la parte inferior */
+    margin: 0 auto;       /* centrar horizontalmente */
+    max-width: 400px;     /* ancho máximo deseado */
+    left: 0;
+    right: 0;
+    border-radius: 8px 8px 0 0;
+  }
