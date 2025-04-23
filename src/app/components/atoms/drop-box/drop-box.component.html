@@ -8,10 +8,12 @@
       </span>
       <p [ngClass]="{'orange-text': fileName && !error, 'gray-text': !fileName && !error, 'error-text': error}">
         {{ fileName || (icon === 'image' ? 'Selecciona la imagen' : 'Selecciona el archivo') }}
+        <span *ngIf="required && !fileName" class="required-marker">*</span>
       </p>
       <input type="file" 
              class="file-upload-input" 
              [accept]="getAcceptType()"
+             [attr.required]="required ? '' : null"
              (change)="onFileSelected($event)">
     </label>
   </div>
@@ -25,10 +27,14 @@
       <span>
         <app-svg-icon [icon]="icon === 'image' ? 'Image.svg' : 'Upload.svg'" [color]="'#999'"></app-svg-icon>
       </span>
-      <p class="gray-text">{{ icon === 'image' ? 'Selecciona la imagen' : 'Selecciona el archivo' }}</p>
+      <p class="gray-text">
+        {{ icon === 'image' ? 'Selecciona la imagen' : 'Selecciona el archivo' }}
+        <span *ngIf="required && !fileName" class="required-marker">*</span>
+      </p>
       <input type="file" 
              class="file-upload-input" 
              [accept]="getAcceptType()"
+             [attr.required]="required ? '' : null"
              disabled>
     </label>
   </div>

@@ -17,6 +17,7 @@ export class DropBoxComponent {
   @Input() error: boolean = false;
   @Input() information: string = 'Informational Text';
   @Input() icon: string = ''; 
+  @Input() required: boolean = true;
   fileName: string = '';
 
   getAcceptType(): string {
