@@ -7,6 +7,7 @@
     background: #FFFFFF;
     border: 1px solid #E2E8F0;
     border-radius: 12px;
+    transition: all 0.3s ease;
   }
   
   .icon-wrapper {
@@ -68,4 +69,47 @@
   .has-selection input {
     color: #f07718;
     font-weight: 500;
+  }
+  
+  /* Estado de error */
+  .has-error {
+    border-color: #FF3B30;
+    background-color: #FFF5F5;
+  }
+  
+  .has-error .field-label {
+    color: #FF3B30;
+  }
+  
+  .has-error input {
+    color: #FF3B30;
+  }
+  
+  .has-error .icon-wrapper app-svg-icon {
+    color: #FF3B30;
+  }
+  
+  /* Estado deshabilitado */
+  .is-disabled {
+    opacity: 0.7;
+    background-color: #F5F5F5;
+    cursor: not-allowed;
+  }
+  
+  .is-disabled input {
+    cursor: not-allowed;
+  }
+
+  .input-field-container.has-error input {
+    border-color: #ff0000;
+  }
+
+  .input-field-container.is-disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .input-field-container.is-disabled input {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
   }

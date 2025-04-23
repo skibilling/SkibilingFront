@@ -17,6 +17,8 @@ export class InputFieldComponent {
   @Input() type: string = 'text';
   @Input() required: boolean = false;
   @Input() value: string = '';
+  @Input() isError: boolean = false;
+  @Input() isDisabled: boolean = false;
 
   @Output() valueChange = new EventEmitter<string>();
 
