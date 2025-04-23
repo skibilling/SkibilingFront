@@ -1,0 +1,36 @@
+<p>pruebas works!</p>
+<!--<app-icon-prueba [name]="'Bus'" [height]="'600'" [width]="'600'" [color]="'orange'"></app-icon-prueba>-->
+<app-svg-icon [icon]="'Bus.svg'" [color]="'orange'"></app-svg-icon>
+<p>Dropbox normal</p>
+<app-drop-box [state]="'default'" [icon]="'pdf'"></app-drop-box>
+<p>Dropbox disabled</p>
+<app-drop-box [state]="'disabled'"[icon]="'pdf'"></app-drop-box>
+<p>Dropbox upload</p>
+<app-drop-box [state]="'loaded'"[icon]="'pdf'"></app-drop-box>
+<p>Dropbox error</p>
+<app-drop-box [state]="'default'" [error]="true" [icon]="'pdf'"></app-drop-box>
+<p>Dropbox normal</p>
+<app-drop-box [state]="'default'" [icon]="'image'"></app-drop-box>
+<p>Dropbox disabled</p>
+<app-drop-box [state]="'disabled'"[icon]="'image'"></app-drop-box>
+<p>Dropbox upload</p>
+<app-drop-box [state]="'loaded'"[icon]="'image'"></app-drop-box>
+<p>Dropbox error</p>
+<app-drop-box [state]="'default'" [error]="true" [icon]="'image'"></app-drop-box>
+<p>Dropbox normal</p>
+<app-drop-box [state]="'default'" [icon]="'csv'"></app-drop-box>
+<p>Dropbox disabled</p>
+<app-drop-box [state]="'disabled'"[icon]="'csv'"></app-drop-box>
+<p>Dropbox upload</p>
+<app-drop-box [state]="'loaded'"[icon]="'csv'"></app-drop-box>
+<p>Dropbox error</p>
+<app-drop-box [state]="'default'" [error]="true" [icon]="'csv'"></app-drop-box>
+
+<p>Hint con tipo link:</p>
+<app-hint 
+  [type]="'link'" 
+  [text]="'Este es un hint de tipo link'"
+  [onClickAction]="mostrarMensajeAdmin">
+</app-hint>
+
+<p *ngIf="showMessage">Hola Angel</p>

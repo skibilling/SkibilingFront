@@ -1,93 +1,64 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HintComponent } from "../hint/hint.component";
+import { SvgIconComponent } from "../svg-icon/svg-icon.component";
+import { CheckSelectorComponent } from "../check-selector/check-selector.component";
+
+
 @Component({
   selector: 'app-drop-box',
-  imports: [CommonModule, HintComponent],
+  standalone: true,
+  imports: [CommonModule, HintComponent, SvgIconComponent, CheckSelectorComponent],
   templateUrl: './drop-box.component.html',
-  styleUrl: './drop-box.component.css'
+  styleUrls: ['./drop-box.component.css']
 })
 export class DropBoxComponent {
-  @Input() state: 'default' | 'disabled' | 'success' | 'warning' | 'error' = 'default';
+  @Input() state: 'default' | 'loaded' | 'disabled' = 'default';
   @Input() error: boolean = false;
-  @Input() filename: string = '';
   @Input() information: string = 'Informational Text';
-  @Input() icon: string = ''; // ejemplo: 'fa fa-upload'
-  @Input() required: boolean = true;
+  @Input() icon: string = ''; 
+  fileName: string = '';
 
-  get dropBoxClasses(): string[] {
-    const classes = ['drop-box'];
-
-    classes.push(`drop-box--${this.state}`);
-
-    if (this.error) {
-      classes.push('drop-box--error-border');
-    }
-
-    return classes;
-  }
-
-  get shouldShowFilename(): boolean {
-    return !!this.filename && this.state !== 'disabled';
-  }
-
-  get shouldShowIcon(): boolean {
-    return !!this.icon && this.state !== 'disabled';
-  }
-
-  get isDisabled(): boolean {
-    return this.state === 'disabled';
-  }
-  
-  get iconImagePath(): string {
-    switch (this.icon) {
+  getAcceptType(): string {
+    switch(this.icon) {
       case 'image':
-        return 'assets/Image.svg';
+        return '.jpg,.jpeg,.png,.gif';
       case 'pdf':
-      case 'csv':
-        return 'assets/Upload.svg';
-      default:
-        return 'assets/Upload.svg';
-    }
-  }
-  
-  get acceptedFileType(): string {
-    switch (this.icon) {
-      case 'image':
-        return 'image/*';
-      case 'pdf':
-        return 'application/pdf';
+        return '.pdf';
       case 'csv':
         return '.csv';
-      default:
-        return '*/*';
-    }
-  }
-  
-  get uploadLabelText(): string {
-    switch (this.icon) {
-      case 'image':
-        return 'Seleccionar imagen';
-      case 'pdf':
-        return 'Seleccionar PDF';
-      case 'csv':
-        return 'Seleccionar CSV';
-      default:
-        return 'Seleccionar archivo';
-    }
-  }
-  
-  get hintText(): string {
-    switch (this.icon) {
-      case 'image':
-        return 'Solo se permiten imágenes';
-      case 'pdf':
-        return 'Solo se permiten archivos PDF';
-      case 'csv':
-        return 'Solo se permiten archivos CSV';
       default:
         return '';
     }
   }
-  
+
+  isValidFileType(fileName: string): boolean {
+    const extension = fileName.split('.').pop()?.toLowerCase();
+    switch(this.icon) {
+      case 'image':
+        return ['jpg', 'jpeg', 'png', 'gif'].includes(extension || '');
+      case 'pdf':
+        return extension === 'pdf';
+      case 'csv':
+        return extension === 'csv';
+      default:
+        return false;
+    }
+  }
+
+  onFileSelected(event: Event) {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      if (this.isValidFileType(file.name)) {
+        this.fileName = file.name;
+        this.error = false;
+        this.state = 'loaded';
+      } else {
+        this.error = true;
+        this.fileName = '';
+        this.state = 'default';
+      }
+    }
+  }
 }

@@ -1,4 +1,5 @@
-    <div class="hint-box">
-        <img src="assets/Info.svg" alt="Hint" />
-        <span>{{ information }}</span>
-    </div>
+<div class="hint-box" [ngClass]="type" (click)="handleClick()">
+    <app-svg-icon [icon]="'Info.svg'" [color]="getIconColor()"></app-svg-icon>
+    <span [ngClass]="{'link-text': type === 'link'}">{{ text }}</span>
+</div>
+  

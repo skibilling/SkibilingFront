@@ -18,3 +18,25 @@
     font-size: 12px;
     color: #888;
 }
+  
+  .hint-box.error span {
+    color: red;
+  }
+  
+  .hint-box.info span {
+    color: gray;
+  }
+  
+.hint-box.link {
+    cursor: pointer;
+}
+
+.hint-box.link:hover {
+    opacity: 0.8;
+}
+
+.hint-box.link span,
+.hint-box.link app-svg-icon {
+    color: #0066cc;
+    text-decoration: underline;
+}

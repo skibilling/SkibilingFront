@@ -1,30 +1,36 @@
-<div [ngClass]="dropBoxClasses">
-  <!-- Si hay archivo cargado -->
-  <ng-container *ngIf="shouldShowFilename; else showUploadLabel">
-    <div class="upload-label">
-      <img src="assets/CircleCheckBig.svg" alt="Upload" style="stroke-linecap:orange"/>
-      {{ filename }}
-    </div>
-  </ng-container>
-  
-  <!-- Si NO hay archivo cargado -->
-  <ng-template #showUploadLabel>
-    <label [for]="icon" class="upload-label" *ngIf="!isDisabled">
-      <img [src]="iconImagePath" alt="Upload"/>
-      <span>{{ uploadLabelText }}</span>
-      <input
-        type="file"
-        class="upload-input"
-        [id]="icon"
-        [accept]="acceptedFileType"
-        [disabled]="isDisabled"
-      />
+<!-- Div para estados default y loaded -->
+<div *ngIf="state === 'default' || state === 'loaded'">
+  <div class="upload-label" [ngClass]="{'error-state': error}">
+    <label class="file-upload-label">
+      <span>
+        <app-svg-icon [icon]="fileName ? 'CircleCheckBig.svg' : (icon === 'image' ? 'Image.svg' : 'Upload.svg')" 
+                     [color]="error ? 'red' : (fileName ? 'orange' : '#999')"></app-svg-icon>
+      </span>
+      <p [ngClass]="{'orange-text': fileName && !error, 'gray-text': !fileName && !error, 'error-text': error}">
+        {{ fileName || (icon === 'image' ? 'Selecciona la imagen' : 'Selecciona el archivo') }}
+      </p>
+      <input type="file" 
+             class="file-upload-input" 
+             [accept]="getAcceptType()"
+             (change)="onFileSelected($event)">
     </label>
-  </ng-template>
-  
-  <!-- Hint dinámico según tipo de archivo -->
-  <app-hint *ngIf="!isDisabled" [information]="hintText"></app-hint>
+  </div>
+  <app-hint [text]="information" [type]="error ? 'error' : 'info'"></app-hint>
 </div>
-  
-  
-  
+
+<!-- Div para estado disabled -->
+<div *ngIf="state === 'disabled'">
+  <div class="upload-label">
+    <label class="file-upload-label">
+      <span>
+        <app-svg-icon [icon]="icon === 'image' ? 'Image.svg' : 'Upload.svg'" [color]="'#999'"></app-svg-icon>
+      </span>
+      <p class="gray-text">{{ icon === 'image' ? 'Selecciona la imagen' : 'Selecciona el archivo' }}</p>
+      <input type="file" 
+             class="file-upload-input" 
+             [accept]="getAcceptType()"
+             disabled>
+    </label>
+  </div>
+  <app-hint [text]="information" type="info"></app-hint>
+</div>
