@@ -1,20 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { BottomSheetComponent } from '../../../organisms/bottom-sheet/bottom-sheet.component';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
-import { PaymentReceiptComponent } from '../steps/payment-receipt.component';
+import { ProgressBarComponent } from '../../organisms/progress-bar/progress-bar.component';
+
 @Component({
-    selector: 'app-page-payment',
+    selector: 'app-page-form',
     standalone: true,
     imports:[CommonModule],
-    templateUrl: './page-payment.component.html',
-    styleUrls: ['./page-payment.component.css']
+    templateUrl: './page-form.component.html',
+    styleUrls: ['./page-form.component.css']
 })
-export class PagePaymentComponent {
+export class PageFormComponent {
 
     constructor(private bottomSheet: MatBottomSheet) {}
     openBottomSheet(): void {
-      this.bottomSheet.open(PaymentReceiptComponent, {
+      this.bottomSheet.open(ProgressBarComponent, {
         // Aquí puedes configurar distintas propiedades
         // por ejemplo, panelClass para personalizar la posición o clase CSS
         panelClass: 'custom-bottom-sheet',

@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { StepperComponent } from '../../../molecules/stepper/stepper.component';
+
 import { Router } from '@angular/router';
-import { PagePaymentComponent } from '../page-payment/page-payment.component';
+import { StepperComponent } from '../../molecules/stepper/stepper.component';
+import { PageFormComponent } from '../../pages/page-form/page-form.component';
+
 @Component({
-  selector: 'app-payment-receipt',
+  selector: 'app-progress-bar',
   standalone: true,
-  imports: [CommonModule, StepperComponent, PagePaymentComponent],
-  templateUrl: './payment-receipt.component.html',
-  styleUrls: ['./payment-receipt.component.css']
+  imports: [CommonModule, StepperComponent, PageFormComponent],
+  templateUrl: './progress-bar.component.html',
+  styleUrls: ['./progress-bar.component.css']
 })
-export class PaymentReceiptComponent implements OnInit {
+export class ProgressBarComponent implements OnInit {
   currentStep: number = 1;
   highestStepReached: number = 1; // Almacena el paso más alto alcanzado
   showMessage: boolean = false;
