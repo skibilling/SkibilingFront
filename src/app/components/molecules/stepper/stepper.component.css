@@ -1,0 +1,26 @@
+.stepper-container {
+  width: 100%;
+  padding: 20px;
+}
+
+.steps-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.connector {
+  width: 60px;
+  height: 2px;
+  background-color: #E0E0E0;
+  transition: all 0.3s ease;
+}
+
+.connector.active {
+  background-color: #f07718;
+}
+
+.connector.all-completed {
+  background-color: #4CAF50;
+}

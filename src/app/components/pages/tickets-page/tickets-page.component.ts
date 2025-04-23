@@ -14,6 +14,7 @@ import { DividerComponent } from '../../atoms/divider/divider.component';
 import { LinkComponent } from '../../atoms/link/link.component';
 import { SelectFieldComponent } from '../../atoms/select-field/select-field.component';
 import { InputFieldComponent } from '../../atoms/input-field/input-field.component';
+import { StepperComponent } from '../../molecules/stepper/stepper.component';
 @Component({
   selector: 'app-tickets-page',
   standalone: true,
@@ -26,7 +27,8 @@ import { InputFieldComponent } from '../../atoms/input-field/input-field.compone
     DividerComponent,
     LinkComponent,
     SelectFieldComponent,
-    InputFieldComponent
+    InputFieldComponent,
+    StepperComponent
   ],
   templateUrl: './tickets-page.component.html',
   styleUrl: './tickets-page.component.css',
