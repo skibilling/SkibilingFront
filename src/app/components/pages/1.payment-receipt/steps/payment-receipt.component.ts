@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepperComponent } from '../../../molecules/stepper/stepper.component';
 import { Router } from '@angular/router';
-
+import { PagePaymentComponent } from '../page-payment/page-payment.component';
 @Component({
   selector: 'app-payment-receipt',
   standalone: true,
-  imports: [CommonModule, StepperComponent],
+  imports: [CommonModule, StepperComponent, PagePaymentComponent],
   templateUrl: './payment-receipt.component.html',
   styleUrls: ['./payment-receipt.component.css']
 })
