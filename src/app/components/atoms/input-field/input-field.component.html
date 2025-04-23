@@ -1,27 +1,40 @@
-<div class="input-field-container" [class.has-selection]="value">
-    <div class="icon-wrapper">
-      <app-svg-icon 
-        [icon]="icon"
-        [color]="value ? '#f07718' : '#ADADAD'"
-        width="24px"
-        height="24px">
-      </app-svg-icon>
+<div class="input-field-container" [class.has-error]="isError" [class.is-disabled]="isDisabled" [class.has-selection]="value">
+  <div class="icon-wrapper">
+    <div *ngIf="!isError">
+    <app-svg-icon 
+      [icon]="icon"
+      [color]="value ? '#f07718' : '#ADADAD'"
+      width="24px"
+      height="24px"
+      >
+    </app-svg-icon>
     </div>
+    <div *ngIf="isError">
+    <app-svg-icon 
+      [icon]="icon"
+      [color]="'#FF3B30'"
+      width="24px"
+      height="24px"
+      >
+    </app-svg-icon>
+  </div>
+  </div>
+  
+  <div class="content-wrapper">
+    <label class="field-label">
+      {{ label }}<span class="required" *ngIf="required">*</span>
+    </label>
     
-    <div class="content-wrapper">
-      <label class="field-label">
-        {{ label }}<span class="required" *ngIf="required">*</span>
-      </label>
-      
-      <div class="input-wrapper">
-        <input
-          [type]="type"
-          [placeholder]="placeholder"
-          [required]="required"
-          [value]="value"
-          (input)="onInputChange($event)"
-          (focus)="onInputFocus()"
-          (blur)="onInputBlur()">
-      </div>
+    <div class="input-wrapper">
+      <input
+        [type]="type"
+        [placeholder]="placeholder"
+        [required]="required"
+        [value]="value"
+        [disabled]="isDisabled"
+        (input)="onInputChange($event)"
+        (focus)="onInputFocus()"
+        (blur)="onInputBlur()">
     </div>
   </div>
+</div>

@@ -199,5 +199,28 @@
 ></app-stepper>
 <app-stepper
 [currentStep]="5"
+[isProcessCompleted]="true"
 ></app-stepper>
+<!-- Input Normal -->
+<app-input-field
+  label="Nombre"
+  placeholder="Ingresa tu nombre"
+  icon="User.svg">
+</app-input-field>
+
+<!-- Input con Error -->
+<app-input-field
+  label="Email"
+  placeholder="Ingresa tu email"
+  icon="User.svg"
+  [isError]="true">
+</app-input-field>
+
+<!-- Input Deshabilitado -->
+<app-input-field
+  label="Usuario"
+  placeholder="No disponible"
+  icon="User.svg"
+  [isDisabled]="true">
+</app-input-field>
 </div>

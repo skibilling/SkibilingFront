@@ -1,0 +1,111 @@
+.payment-receipt-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.content-container {
+  margin-top: 40px;
+  position: relative;
+}
+
+.message-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #f07718;
+  color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.message-container.show {
+  opacity: 1;
+}
+
+.step-content {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.step-content.navigating {
+  transform: translateX(-10px);
+}
+
+.step {
+  min-height: 300px;
+}
+
+.step h2 {
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 24px;
+}
+
+.step.completed {
+  text-align: center;
+  padding: 40px;
+}
+
+.step.completed h2 {
+  color: #f07718;
+  font-size: 28px;
+}
+
+.navigation-controls {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  padding: 0 20px;
+}
+
+button {
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-previous {
+  background-color: #f5f5f5;
+  color: #666;
+}
+
+.btn-previous:hover {
+  background-color: #e0e0e0;
+}
+
+.btn-next {
+  background-color: #f07718;
+  color: white;
+}
+
+.btn-next:hover {
+  background-color: #d86500;
+}
+
+.btn-finish {
+  background-color: #4CAF50;
+  color: white;
+}
+
+.btn-finish:hover {
+  background-color: #3d8b40;
+}
+
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+} 
