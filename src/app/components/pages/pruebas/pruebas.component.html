@@ -34,3 +34,10 @@
 </app-hint>
 
 <p *ngIf="showMessage">Hola Angel</p>
+<app-status-tickets [status]="'error'"></app-status-tickets>
+<app-status-tickets [status]="'processing'"></app-status-tickets>
+<app-status-tickets [status]="'ready'"></app-status-tickets>
+<app-status-billing [status]="'error'"></app-status-billing>
+<app-status-billing [status]="'processing'"></app-status-billing>
+<app-status-billing [status]="'canceled'"></app-status-billing>
+<app-status-billing [status]="'ready'"></app-status-billing>

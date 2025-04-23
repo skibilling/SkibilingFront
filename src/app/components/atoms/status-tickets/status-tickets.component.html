@@ -1,0 +1,11 @@
+<div class="status-container">
+  <div class="status error" *ngIf="status === 'error'">
+    <p>Error</p>
+  </div>
+  <div class="status processing" *ngIf="status === 'processing'">
+    <p>Procesando</p>
+  </div>
+  <div class="status ready" *ngIf="status === 'ready'">
+    <p>Listo</p>
+  </div>
+</div>
