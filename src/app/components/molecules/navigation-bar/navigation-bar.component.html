@@ -1,9 +1,7 @@
 <div class="nav-container">
   <img src="assets/Skibilling.svg" alt="Skibilling" class="nav-logo">
-  <div class="nav-links">
-    <a class="nav-link" [class.active]="activeLink === 'inicio'" (click)="setActiveLink('inicio')">Inicio</a>
-    <a class="nav-link" [class.active]="activeLink === 'guia'" (click)="setActiveLink('guia')">Guía</a>
-    <a class="nav-link" [class.active]="activeLink === 'faq'" (click)="setActiveLink('faq')">FAQ</a>
-    <a class="nav-link" [class.active]="activeLink === 'contacto'" (click)="setActiveLink('contacto')">Contacto</a>
-  </div>
+  <a class="nav-link" [class.active]="activeLink === 'inicio'" (click)="setActiveLink('inicio')">Inicio</a>
+  <a class="nav-link" [class.active]="activeLink === 'guia'" (click)="setActiveLink('guia')">Guía</a>
+  <a class="nav-link" [class.active]="activeLink === 'faq'" (click)="setActiveLink('faq')">FAQ</a>
+  <a class="nav-link" [class.active]="activeLink === 'contacto'" (click)="setActiveLink('contacto')">Contacto</a>
 </div>

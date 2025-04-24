@@ -1,12 +1,13 @@
 <div *ngIf="currentView === ''" class="modal-container">
-<app-titles text="Paso 1: Capturar comprobante de pago" color="#000"></app-titles>
-<app-simple-text text="Sube tu comprobante para generar la factura. Si necesitas más de uno, podrás agregarlo después."></app-simple-text>
-<app-hint 
-text="Nota: Se facturarán con el RFC que proporciones a continuación."
-type="info"
-></app-hint>
+  <app-titles text="Paso 1: Capturar comprobante de pago" color="#000"></app-titles>
+  <app-simple-text
+    text="Sube tu comprobante para generar la factura. Si necesitas más de uno, podrás agregarlo después."></app-simple-text>
+  <app-hint
+    text="Nota: Se facturarán con el RFC que proporciones a continuación."
+    type="info"
+  ></app-hint>
 
-<app-custom-button
+  <app-custom-button
     type="primary"
     text="Cargar imagen del comprobante"
     icon="Camera.svg"
@@ -14,22 +15,22 @@ type="info"
     (click)="openUploadPhoto()"
   >
   </app-custom-button>
-<app-custom-button
-  type="secondary"
-  text="Capturar manualmente"
-  icon="Keyboard.svg"
-  [useAssetIcon]="true"
-  (click)="openManualCapture()"
->
-</app-custom-button>
-<app-custom-button
-  type="secondary"
-  text="Subir archivo"
-  icon="FileText.svg"
-  [useAssetIcon]="true"
-  (click)="openUploadFile()"
->
-</app-custom-button>
+  <app-custom-button
+    type="secondary"
+    text="Capturar manualmente"
+    icon="Keyboard.svg"
+    [useAssetIcon]="true"
+    (click)="openManualCapture()"
+  >
+  </app-custom-button>
+  <app-custom-button
+    type="secondary"
+    text="Subir archivo"
+    icon="FileText.svg"
+    [useAssetIcon]="true"
+    (click)="openUploadFile()"
+  >
+  </app-custom-button>
 </div>
 <div *ngIf="currentView === 'photo'" class="modal-container">
   <app-upload-photo
@@ -55,7 +56,7 @@ type="info"
 </div>
 <div *ngIf="currentView === 'tickets'" class="modal-container">
   <app-tickets-uploaded
-  (back)="backToMain()"
-  (advance)="advanceToStepTwo()">
+    (back)="backToMain()"
+    (advance)="advanceToStepTwo()">
   </app-tickets-uploaded>
 </div>

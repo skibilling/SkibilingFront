@@ -1,48 +1,18 @@
 .payment-receipt-container {
   width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-.content-container {
-  margin-top: 40px;
-  position: relative;
-}
-
-.message-container {
-  position: fixed;
-  top: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: #f07718;
-  color: white;
-  padding: 15px 30px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  z-index: 1000;
-}
-
-.message-container.show {
-  opacity: 1;
 }
 
 .step-content {
   background: white;
-  border-radius: 12px;
-  padding: 30px;
+  border-radius: 32px 32px 0 0;
+  padding: 32px 16px 8px 16px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
+  width: 100%;
 }
 
 .step-content.navigating {
   transform: translateX(-10px);
-}
-
-.step {
-  min-height: 300px;
 }
 
 .step h2 {
@@ -108,4 +78,4 @@ button {
 button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
-} 
+}

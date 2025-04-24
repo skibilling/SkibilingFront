@@ -1,25 +1,32 @@
-<app-titles
-text="Bienvenido"
-></app-titles>
+<div class="main-container">
+  <div class="text-container">
+    <app-titles
+      text="Bienvenido"
+    ></app-titles>
 
-<app-simple-text
-text="Factura tus compras de manera rápida y sencilla. Ten tus datos fiscales, comprobantes y dirección de facturación listos."
-></app-simple-text>
+    <app-simple-text
+      text="Factura tus compras de manera rápida y sencilla. Ten tus datos fiscales, comprobantes y dirección de facturación listos."
+    ></app-simple-text>
+  </div>
 
-<app-check-selector
-[text]="'He leido y acepto el aviso de privacidad'"
-[selected]="isPrivacyAccepted"
-(selectionChange)="onPrivacyChange($event)"
-></app-check-selector>
+  <div class="buttons-container">
+    <app-custom-button
+      text="Iniciar Facturación"
+      type="primary"
+      [disabled]="!isPrivacyAccepted"
+      (click)="onStartInvoicing()"
+    ></app-custom-button>
 
-<app-hint
-text="Consulta el aviso de privacidad"
-type="link"
-></app-hint>
+    <app-check-selector
+      [text]="'He leido y acepto el aviso de privacidad'"
+      [selected]="isPrivacyAccepted"
+      (selectionChange)="onPrivacyChange($event)"
+    ></app-check-selector>
 
-<app-custom-button
-text="Iniciar Facturación"
-type="primary"
-[disabled]="!isPrivacyAccepted"
-(click)="onStartInvoicing()"
-></app-custom-button>
+    <app-hint
+      text="Consulta el aviso de privacidad"
+      type="link"
+    ></app-hint>
+  </div>
+
+</div>
