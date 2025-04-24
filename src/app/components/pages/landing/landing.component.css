@@ -5,48 +5,38 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  align-content: space-between;
 }
 
 .content-container {
-  background-color: rgba(255, 165, 0, 0.2);
-  border-radius: 12px;
-  padding: 3rem;
-  margin: auto;
-  max-width: 800px;
-  width: 80%;
-  height: 60vh;
+  background-color: rgba(124, 100, 74, 0.5);
+  border-radius: 32px;
+  height: auto;
   text-align: center;
   display: flex;
   flex-direction: column;
+  align-self: flex-end;
   align-items: center;
   justify-content: center;
-  flex: 1;
+  padding: 32px 16px 32px 16px;
+  gap: 16px;
+  margin: 16px;
 }
 
 .text-container {
-  margin-bottom: 2rem;
-}
-
-.text-container app-titles {
-  font-size: 3.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.text-container app-simple-text {
-  font-size: 1.2rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
 }
 
 .buttons-container {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 8px;
   justify-content: center;
   align-items: center;
   width: 100%;
-  max-width: 300px;
 }
 
 .buttons-container app-custom-button {

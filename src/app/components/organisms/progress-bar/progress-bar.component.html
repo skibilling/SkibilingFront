@@ -1,70 +1,68 @@
 <div class="payment-receipt-container">
-    <app-stepper *ngIf="currentStep!==0"
-      [currentStep]="currentStep"
-      [highestStepReached]="highestStepReached"
-      [isProcessCompleted]="isProcessCompleted"
-      (stepChange)="onStepChange($event)">
-    </app-stepper>
-  
-    <div class="content-container">
-      <!-- Contenido del paso actual -->
-      <div class="step-content" [class.navigating]="isNavigatingBack">
-        <ng-container [ngSwitch]="currentStep">
-          <div *ngSwitchCase="0" class="step">
-            <app-welcome-invoice 
-              (startInvoicing)="handleStartInvoicing()">
-            </app-welcome-invoice>
-          </div>
-          <div *ngSwitchCase="1" class="step">
-            <h2>Paso 1: Información del Ticket</h2>
-            <!-- Contenido del paso 1 -->
-            <app-step-one
-            (advance)="advanceToStepTwo()"
-            ></app-step-one>
-          </div>
-          <div *ngSwitchCase="2" class="step">
-            <h2>Paso 2: Datos Fiscales</h2>
-            <!-- Modificar esta línea para capturar el evento advance -->
-            <app-content-fiscal-data 
-              (advance)="advanceToStepThree()">
-            </app-content-fiscal-data>
-          </div>
-          <div *ngSwitchCase="3" class="step">
-            <h2>Paso 3: Información del Usuario</h2>
-            <app-form-information (advance)="advanceToStepFour()"></app-form-information>
-          </div>
-          <div *ngSwitchCase="4" class="step">
-            <h2>Paso 4: Confirmación</h2>
-            <!-- Contenido del paso 4 -->
-            <app-page-validation></app-page-validation>
-          </div>
-          <div *ngSwitchCase="5" class="step completed">
-            <h2>¡Proceso Completado!</h2>
-            <!-- Contenido de finalización -->
-          </div>
-        </ng-container>
+  <app-stepper *ngIf="currentStep!==0"
+               [currentStep]="currentStep"
+               [highestStepReached]="highestStepReached"
+               [isProcessCompleted]="isProcessCompleted"
+               (stepChange)="onStepChange($event)">
+  </app-stepper>
+
+  <!-- Contenido del paso actual -->
+  <div class="step-content" [class.navigating]="isNavigatingBack">
+    <ng-container [ngSwitch]="currentStep">
+      <div *ngSwitchCase="0" class="step">
+        <app-welcome-invoice
+          (startInvoicing)="handleStartInvoicing()">
+        </app-welcome-invoice>
       </div>
-  
-      <!-- Controles de navegación -->
-      <div class="navigation-controls">
-        <button 
-          class="btn-previous" 
-          *ngIf="currentStep > 1 && currentStep < 5"
-          (click)="previousStep()">
-          Anterior
-        </button>
-        <button 
-          class="btn-next" 
-          *ngIf="currentStep < 4"
-          (click)="nextStep()">
-          Siguiente
-        </button>
-        <button 
-          class="btn-finish" 
-          *ngIf="currentStep === 4"
-          (click)="finishProcess()">
-          Finalizar
-        </button>
+      <div *ngSwitchCase="1" class="step">
+        <h2>Paso 1: Información del Ticket</h2>
+        <!-- Contenido del paso 1 -->
+        <app-step-one
+          (advance)="advanceToStepTwo()"
+        ></app-step-one>
       </div>
-    </div>
-  </div> 
+      <div *ngSwitchCase="2" class="step">
+        <h2>Paso 2: Datos Fiscales</h2>
+        <!-- Modificar esta línea para capturar el evento advance -->
+        <app-content-fiscal-data
+          (advance)="advanceToStepThree()">
+        </app-content-fiscal-data>
+      </div>
+      <div *ngSwitchCase="3" class="step">
+        <h2>Paso 3: Información del Usuario</h2>
+        <app-form-information (advance)="advanceToStepFour()"></app-form-information>
+      </div>
+      <div *ngSwitchCase="4" class="step">
+        <h2>Paso 4: Confirmación</h2>
+        <!-- Contenido del paso 4 -->
+        <app-page-validation></app-page-validation>
+      </div>
+      <div *ngSwitchCase="5" class="step completed">
+        <h2>¡Proceso Completado!</h2>
+        <!-- Contenido de finalización -->
+      </div>
+    </ng-container>
+  </div>
+
+  <!-- Controles de navegación -->
+  <div class="navigation-controls">
+    <button
+      class="btn-previous"
+      *ngIf="currentStep > 1 && currentStep < 5"
+      (click)="previousStep()">
+      Anterior
+    </button>
+    <button
+      class="btn-next"
+      *ngIf="currentStep < 4"
+      (click)="nextStep()">
+      Siguiente
+    </button>
+    <button
+      class="btn-finish"
+      *ngIf="currentStep === 4"
+      (click)="finishProcess()">
+      Finalizar
+    </button>
+  </div>
+</div>
