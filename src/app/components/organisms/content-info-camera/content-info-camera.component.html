@@ -2,7 +2,7 @@
   <app-titles [text]="'2.1. Sube o toma una foto'" [color]="'#000'"></app-titles>
   
   <app-simple-text 
-    [text]="'Selecciona un archivo o captura una imagen de tus datos fiscales. Solo se extraerá la información claramente legible.\n\nIncluye si es posible:\nRFC\nRégimen fiscal\nUso de CFDI\nNombre o razón social\nCorreo electrónico\nCódigo postal o dirección completa'"
+    [text]="'<p>Selecciona un archivo o captura una imagen de tus datos fiscales. Solo se extraerá la información claramente legible.</p><p>Incluye si es posible:</p><ul><li>- RFC</li><li>- Régimen fiscal</li><li>- Uso de CFDI</li><li>- Nombre o razón social</li><li>- Correo electrónico</li><li>- Código postal o dirección completa</li></ul>'"
     [color]="'#000'">
   </app-simple-text>
 
@@ -13,15 +13,23 @@
 
   <app-drop-box
     [information]="'Obtener mi Constancia de Situación Fiscal'"
-    [icon]="'Image.svg'"
-    [fileExtensions]="'.jpg'">
+    [icon]="'image'"
+    [fileExtensions]="'.jpg'"
+    [showHint]="false">
   </app-drop-box>
+
+  <app-hint
+    [type]="'link'"
+    [text]="'¿No tienes tu Constancia de Situación Fiscal? Descárgala aquí'"
+    [linkUrl]="'https://login.siat.sat.gob.mx/nidp/idff/sso?id=mat-ptsc-totp_Aviso&sid=0&option=credential&sid=0&target=https%3A%2F%2Fwwwmat.sat.gob.mx%2Fapp%2Fseg%2Fcont%2FaccesoC%3Fparametro%3D1%26url%3D%2Foperacion%2F43824%2Freimprime-tus-acuses-del-rfc%26target%3Dprincipal%26tipoLogeo%3Dc%26hostServer%3Dhttps%3A%2F%2Fwwwmat.sat.gob.mx'">
+  </app-hint>
 
   <app-divider [text]="'o si prefieres'"></app-divider>
 
   <app-custom-button
-    [type]="'secondary'"
-    [text]="'Tomar foto de tus datos fiscales'"
-    [icon]="'Upload.svg'">
+    type="primary"
+    text="Tomar foto de tus datos fiscales"
+    icon="Camera.svg"
+    [useAssetIcon]="true">
   </app-custom-button>
 </div>

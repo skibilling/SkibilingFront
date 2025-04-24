@@ -13,6 +13,7 @@ export class HintComponent {
   @Input() type: 'info' | 'error' | 'link' = 'info';
   @Input() text: string = "";
   @Input() onClickAction: () => void = () => {};
+  @Input() linkUrl: string = "";
   @Output() linkClicked = new EventEmitter<void>();
 
   getIconColor(): string {

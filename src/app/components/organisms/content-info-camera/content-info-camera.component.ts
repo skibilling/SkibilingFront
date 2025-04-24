@@ -6,6 +6,7 @@ import { HintComponent } from '../../atoms/hint/hint.component';
 import { DropBoxComponent } from '../../atoms/drop-box/drop-box.component';
 import { DividerComponent } from '../../atoms/divider/divider.component';
 import { CustomButtonComponent } from '../../atoms/custom-button/custom-button.component';
+import { BottomSheetComponent } from "../bottom-sheet/bottom-sheet.component";
 
 @Component({
   selector: 'app-content-info-camera',
@@ -17,9 +18,14 @@ import { CustomButtonComponent } from '../../atoms/custom-button/custom-button.c
     HintComponent,
     DropBoxComponent,
     DividerComponent,
-    CustomButtonComponent
-  ],
+    CustomButtonComponent,
+    BottomSheetComponent
+],
   templateUrl: './content-info-camera.component.html',
   styleUrls: ['./content-info-camera.component.css']
 })
-export class ContentInfoCameraComponent {}
+export class ContentInfoCameraComponent {
+  openSAT() {
+    window.open('https://www.sat.gob.mx/', '_blank');
+  }
+}
