@@ -62,6 +62,6 @@ export class UploadPhotoComponent {
         file: this.selectedFile
       });
     }
-    this.onGoBack();
+    this.complete.emit();
   }
 }

@@ -1,0 +1,55 @@
+<div class="invoices-container">
+    <app-titles 
+        [text]="'Mis últimas facturas'" 
+        [color]="'black'">
+    </app-titles>
+
+    <app-simple-text
+        [text]="'Aquí puedes ver el historial de tus facturas y su estado actual'" 
+        [color]="'#666666'">
+    </app-simple-text>
+
+    <div class="invoices-list">
+        <div class="invoice-card" *ngFor="let invoice of invoices">
+            <div class="invoice-header">
+                <div class="invoice-id">{{invoice.id}}</div>
+                <div class="invoice-status" [style.color]="getStatusColor(invoice.status)">
+                    <app-svg-icon
+                        [icon]="getStatusIcon(invoice.status)"
+                        [color]="getStatusColor(invoice.status)"
+                        [width]="'20px'"
+                        [height]="'20px'">
+                    </app-svg-icon>
+                    <span>{{invoice.status}}</span>
+                </div>
+            </div>
+
+            <div class="invoice-body">
+                <div class="invoice-description">{{invoice.description}}</div>
+                <div class="invoice-details">
+                    <div class="invoice-date">
+                        <app-svg-icon
+                            icon="Calendar-check.svg"
+                            [width]="'16px'"
+                            [height]="'16px'">
+                        </app-svg-icon>
+                        <span>{{invoice.date | date:'dd/MM/yyyy'}}</span>
+                    </div>
+                    <div class="invoice-amount">
+                        <app-svg-icon
+                            icon="CircleDollarSign.svg"
+                            [width]="'16px'"
+                            [height]="'16px'">
+                        </app-svg-icon>
+                        <span>{{invoice.amount | currency:'MXN':'symbol-narrow':'1.2-2'}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <app-hint
+        [type]="'info'"
+        [text]="'Las facturas pueden tardar hasta 24 horas en procesarse'">
+    </app-hint>
+</div>
