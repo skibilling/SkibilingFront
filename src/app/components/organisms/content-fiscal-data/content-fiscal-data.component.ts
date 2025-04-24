@@ -6,6 +6,7 @@ import { CustomButtonComponent } from '../../atoms/custom-button/custom-button.c
 import { DividerComponent } from '../../atoms/divider/divider.component';
 import { InputFieldComponent } from '../../atoms/input-field/input-field.component';
 import { SelectFieldComponent } from '../../atoms/select-field/select-field.component';
+import { ContentInfoCameraComponent } from '../content-info-camera/content-info-camera.component';
 
 @Component({
   selector: 'app-content-fiscal-data',
@@ -17,15 +18,22 @@ import { SelectFieldComponent } from '../../atoms/select-field/select-field.comp
     CustomButtonComponent,
     DividerComponent,
     InputFieldComponent,
-    SelectFieldComponent
+    SelectFieldComponent,
+    ContentInfoCameraComponent
   ],
   templateUrl: './content-fiscal-data.component.html',
   styleUrls: ['./content-fiscal-data.component.css']
 })
 export class ContentFiscalDataComponent {
+  mostrarCamara: boolean = false;
+  
   CFDIUsesOptions = [
     { value: 'G01', label: 'Adquisición de mercancías' },
     { value: 'G02', label: 'Devoluciones, descuentos o bonificaciones' },
     { value: 'G03', label: 'Gastos en general' }
-  ]
+  ];
+
+  mostrarContentInfoCamera(): void {
+    this.mostrarCamara = true;
+  }
 }

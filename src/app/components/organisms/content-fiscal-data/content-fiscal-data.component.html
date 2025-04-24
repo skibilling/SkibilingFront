@@ -1,5 +1,5 @@
 <div class="fiscal-data-container">
-  <div>
+  <div *ngIf="!mostrarCamara">
     <app-titles [text]="'2. Datos fiscales'" [color]="'#000'"></app-titles>
   
     <app-simple-text 
@@ -11,11 +11,16 @@
       [type]="'tertiary'"
       [text]="'Rellenar automáticamente'"
       [icon]="'FileText.svg'"
-      [useAssetIcon]="true">
+      [useAssetIcon]="true"
+      (buttonClick)="mostrarContentInfoCamera()">
     </app-custom-button>
   </div>
-  <app-divider [text]="'o escribir manualmente'"></app-divider>
-  <div>
+
+  <app-content-info-camera *ngIf="mostrarCamara"></app-content-info-camera>
+
+  <app-divider *ngIf="!mostrarCamara" [text]="'o escribir manualmente'"></app-divider>
+  
+  <div *ngIf="!mostrarCamara">
     <app-input-field
       [icon]="'IdCard.svg'"
       [label]="'RFC'"
@@ -38,11 +43,10 @@
     </app-select-field>
   </div>
   
-  <div>
+  <div *ngIf="!mostrarCamara">
     <app-custom-button
       [type]="'primary'"
       [text]="'Continuar con el siguiente paso'">
     </app-custom-button>
   </div>
-  
 </div>

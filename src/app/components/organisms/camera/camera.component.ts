@@ -1,4 +1,4 @@
-import { Component, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CustomButtonComponent } from "../../atoms/custom-button/custom-button.component";
 
@@ -8,10 +8,14 @@ import { CustomButtonComponent } from "../../atoms/custom-button/custom-button.c
   styleUrls: ['./camera.component.css'],
   imports: [CommonModule, CustomButtonComponent]
 })
-export class CameraComponent {
+export class CameraComponent implements OnInit {
   @ViewChild('video', { static: false }) video!: ElementRef;
   stream!: MediaStream;
   foto?: string;
+
+  ngOnInit(): void {
+    this.iniciarCamara();
+  }
 
   iniciarCamara(): void {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
