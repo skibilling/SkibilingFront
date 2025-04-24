@@ -12,12 +12,14 @@ import { UploadPhotoComponent } from '../../pages/1.payment-receipt/upload-photo
 import { ContentFiscalDataComponent } from '../content-fiscal-data/content-fiscal-data.component';
 import { WelcomeInvoiceComponent } from '../../pages/1.payment-receipt/welcome-invoice/welcome-invoice.component';
 import { PageValidationComponent } from '../../pages/4.data.Validation/page-validation/page-validation.component';
+import { FormInformationComponent } from '../../pages/3.information-&-adress/formInformation/form-Information.component';
 @Component({
   selector: 'app-progress-bar',
   standalone: true,
   imports: [CommonModule, StepperComponent, PageFormComponent,StepComponent,
     StepOneComponent,UploadManualTokenComponent,UploadFileComponent,UploadPhotoComponent,
-  ContentFiscalDataComponent,WelcomeInvoiceComponent,PageValidationComponent],
+  ContentFiscalDataComponent,WelcomeInvoiceComponent,PageValidationComponent,
+FormInformationComponent],
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.css']
 })
@@ -77,5 +79,16 @@ export class ProgressBarComponent implements OnInit {
     console.log('avanzando a paso 222222');
     this.currentStep = 2;
     this.highestStepReached = 2;
+  }
+  advanceToStepThree(): void {
+    console.log('avanzando a paso 3333333');
+    this.currentStep = 3;
+    this.highestStepReached = 3;
+    this.advance.emit(); // Emitir el evento de avance
+  }
+  advanceToStepFour(): void {
+    console.log('avanzando a paso 4444444');
+    this.currentStep = 4;
+    this.advance.emit(); // Emitir el evento de avance
   }
 } 

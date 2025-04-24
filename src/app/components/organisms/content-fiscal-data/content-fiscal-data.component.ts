@@ -28,6 +28,7 @@ export class ContentFiscalDataComponent {
   @Input() mostrarCamara: boolean = false;
   currentStep: number = 1;
   @Output() back = new EventEmitter<void>();
+  @Output() advance = new EventEmitter<void>();
   CFDIUsesOptions = [
     { value: 'G01', label: 'Adquisición de mercancías' },
     { value: 'G02', label: 'Devoluciones, descuentos o bonificaciones' },
@@ -36,4 +37,8 @@ export class ContentFiscalDataComponent {
   Rellenar(){
     this.currentStep = 2;
   }
+  advanceToStepThree() {
+    this.advance.emit();
+  }
+
 }

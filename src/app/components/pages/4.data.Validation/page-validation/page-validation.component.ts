@@ -31,7 +31,7 @@ import { TicketsUploadedListComponent } from "../../../organisms/tickets-uploade
 })
 export class PageValidationComponent {
     currentView: string = 'validation';
-    
+    currentStep: number = 1;
     CFDIUsesOptions = [
         { value: 'G01', label: 'Adquisición de mercancías' },
         { value: 'G02', label: 'Devoluciones, descuentos o bonificaciones' },
@@ -42,10 +42,12 @@ export class PageValidationComponent {
 
     onComplete() {
         this.currentView = 'final-message';
+        this.currentStep = 2;
     }
 
     onBack() {
         this.currentView = 'validation';
+        this.currentStep = 1;
     }
 
     onGenerateInvoice() {

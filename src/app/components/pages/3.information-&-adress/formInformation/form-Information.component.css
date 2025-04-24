@@ -1,0 +1,67 @@
+.form-information-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.instructions {
+    margin-bottom: 8px;
+}
+
+.instructions ol {
+    padding-left: 20px;
+}
+
+.instructions li {
+    margin-bottom: 8px;
+    color: #555;
+    font-size: 14px;
+}
+
+.address-row {
+    display: flex;
+    gap: 16px;
+}
+
+.half-width {
+    flex: 1;
+    min-width: 0; /* Permite que el componente se encoja si es necesario */
+}
+
+.full-address-section {
+    margin-top: 16px;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    animation: fadeIn 0.3s ease;
+}
+
+.save-address-btn {
+    margin-top: 16px;
+    align-self: flex-start;
+}
+
+.advance-btn {
+    margin-top: 24px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsividad para móviles */
+@media (max-width: 600px) {
+    .address-row {
+        flex-direction: column;
+        gap: 16px;
+    }
+    
+    .form-information-container {
+        padding: 12px;
+    }
+}
