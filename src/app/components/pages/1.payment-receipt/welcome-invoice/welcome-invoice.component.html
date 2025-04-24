@@ -10,19 +10,19 @@
   </div>
 
   <div class="buttons-container">
-    <app-custom-button
-      text="Iniciar Facturación"
-      type="primary"
-      [disabled]="!isPrivacyAccepted"
-      (click)="onStartInvoicing()"
-    ></app-custom-button>
-
     <app-check-selector
       [text]="'He leido y acepto el aviso de privacidad'"
       [selected]="isPrivacyAccepted"
       (selectionChange)="onPrivacyChange($event)"
     ></app-check-selector>
 
+    <app-custom-button
+    text="Iniciar Facturación"
+    type="primary"
+    [disabled]="!isPrivacyAccepted"
+    (click)="onStartInvoicing()"
+  ></app-custom-button>
+  
     <app-hint
       text="Consulta el aviso de privacidad"
       type="link"

@@ -1,4 +1,4 @@
-<div >
+<div *ngIf="currentView === 'validation'">
     <app-titles
         text="Paso Final"
     ></app-titles>
@@ -11,7 +11,10 @@
     <app-tickets-uploaded-list></app-tickets-uploaded-list>
     <app-custom-button
         text="Editar o corregir"
-        icon="Info.svg"
+        type="tertiary"
+        icon="Edit.svg"
+        [useAssetIcon]="true"
+        (buttonClick)="onEditOrCorrectStepOne()"
     ></app-custom-button>
     <app-titles
         text="2. Datos Fiscales"
@@ -21,27 +24,33 @@
             [icon]="'Package.svg'"
             [label]="'RFC'"
             [required]="true"
-            [placeholder]="'ABCD123456XX0'">
+            [placeholder]="'ABCD123456XX0'"
+            [isDisabled]="true">
         </app-input-field>
 
         <app-select-field
             [icon]="'Building.svg'"
             [label]="'Régimen Fiscal'"
             [required]="true"
-            [options]="CFDIUsesOptions">
+            [options]="CFDIUsesOptions"
+            [isDisabled]="true">
         </app-select-field>
 
         <app-select-field
             [icon]="'BookMarked.svg'"
             [label]="'Uso CFDI'"
             [required]="true"
-            [options]="CFDIUsesOptions">
+            [options]="CFDIUsesOptions"
+            [isDisabled]="true">
         </app-select-field>
     </div>
     <app-custom-button
-    text="Editar o corregir"
-    icon="Info.svg"
-></app-custom-button>
+        text="Editar o corregir"
+        type="tertiary"
+        icon="Edit.svg"
+        [useAssetIcon]="true"
+        (buttonClick)="onEditOrCorrectStepTwo()"
+    ></app-custom-button>
     <app-titles
         text="3. Datos Personales"
     ></app-titles>
@@ -64,10 +73,18 @@
     ></app-titles>
     <app-input-field
         label="Código Postal *"
-        placeholder="Nombre"
-        icon="User.svg"
+        placeholder="Código postal"
+        icon="MapPin.svg"
         [isDisabled]="true"
     ></app-input-field>
+
+    <app-custom-button
+        text="Editar o corregir"
+        type="tertiary"
+        icon="Edit.svg"
+        [useAssetIcon]="true"
+        (buttonClick)="onEditOrCorrectStepThree()"
+    ></app-custom-button>
 
     <app-check-selector
         text="Guardar datos fiscales de identificación"
@@ -76,12 +93,12 @@
     <app-custom-button
         text="Generar Factura"
         type="primary"
-        (click)="onGenerateInvoice()"
+        (buttonClick)="onGenerateInvoice()"
     ></app-custom-button>
 </div>
 
 <app-final-message 
-    *ngIf="currentStep === 2"
+    *ngIf="currentView === 'final-message'"
     (reload)="onReload()"
     (toContactPage)="onContactPage()"
     (toMyInvoices)="onMyInvoices()"

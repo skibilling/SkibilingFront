@@ -1,4 +1,4 @@
-import { Component } from "@angular/core";
+import { Component, Output,EventEmitter } from "@angular/core";
 import { CommonModule } from "@angular/common";
 import { TitlesComponent } from "../../../../atoms/titles/titles.component";
 import { SimpleTextComponent } from "../../../../atoms/simple-text/simple-text.component";
@@ -12,5 +12,10 @@ import { CustomButtonComponent } from "../../../../atoms/custom-button/custom-bu
     styleUrls: ["./help-photo.component.css"],
 })
 export class HelpPhotoComponent {
-    
+    @Output() manual= new EventEmitter<void>();
+
+    onManualCapture(){
+      console.log("manual capture");
+      this.manual.emit();
+    }
 }
