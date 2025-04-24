@@ -1,5 +1,7 @@
 <div class="hint-box" [ngClass]="type" (click)="handleClick()">
-    <app-svg-icon [icon]="'Info.svg'" [color]="getIconColor()"></app-svg-icon>
-    <span [ngClass]="{'link-text': type === 'link'}">{{ text }}</span>
+  <app-svg-icon [icon]="'Info.svg'" [color]="getIconColor()"></app-svg-icon>
+  <span [ngClass]="{'link-text': type === 'link'}">
+    <a [href]="linkUrl" target="_blank" (click)="onClickAction(); linkClicked.emit()">{{ text }}</a>
+  </span>
 </div>
   
