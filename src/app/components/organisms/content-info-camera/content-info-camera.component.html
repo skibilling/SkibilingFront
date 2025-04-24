@@ -37,12 +37,14 @@
   </div>
 
   <div *ngIf="mostrarInterfazCamara">
-    <app-camera (fotoTomada)="onFotoTomada($event)"></app-camera>
+    <app-camera [modo]="ticket" (fotoTomada)="onFotoTomada($event)"></app-camera>
     
-    <div *ngIf="fotoCapturada" class="foto-preview">
-      <h3>Foto capturada:</h3>
-      <p> {{ fotoCapturada }}</p>
-      <img [src]="fotoCapturada" alt="Foto capturada" style="max-width: 100%;" />
+    <div class="botones-navegacion">
+      <app-custom-button
+        type="secondary"
+        text="Volver"
+        (buttonClick)="volverAForm()">
+      </app-custom-button>
     </div>
   </div>
 </div>

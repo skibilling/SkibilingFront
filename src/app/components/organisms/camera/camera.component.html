@@ -1,16 +1,13 @@
+<div class="camera-container">
+  <video #video width=100% height=100% autoplay playsinline [ngClass]="{'oculto': mostrandoFoto}"></video>
+  <img *ngIf="mostrandoFoto" [src]="foto" alt="Foto tomada" class="foto-overlay" />
+</div>
 <div>
-    <video #video width=100% height=100% autoplay playsinline></video>
-  </div>
-  <div>
-    <app-custom-button 
-      type="primary"
-      text="Tomar foto"
-      icon="Camera.svg"
-      [useAssetIcon]="true"
-      (buttonClick)="tomarFoto()">
-    </app-custom-button>
-  </div>
-  <div *ngIf="foto">
-    <p>Vista previa de la foto:</p>
-    <img [src]="foto" alt="Foto tomada" />
-  </div>
+  <app-custom-button 
+    type="primary"
+    [text]="textoBoton"
+    [icon]="iconoBoton"
+    [useAssetIcon]="true"
+    (buttonClick)="tomarFoto()">
+  </app-custom-button>
+</div>

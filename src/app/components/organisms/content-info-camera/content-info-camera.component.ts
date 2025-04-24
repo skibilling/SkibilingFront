@@ -50,8 +50,13 @@ export class ContentInfoCameraComponent {
     this.mostrarInterfazCamara = true;
   }
 
+  volverAForm(): void {
+    this.mostrarInterfazCamara = false;
+  }
+
   onFotoTomada(foto: string): void {
     this.fotoCapturada = foto;
     // Aquí puedes realizar acciones adicionales con la foto
+    console.log('Foto recibida en el componente padre');
   }
 }
