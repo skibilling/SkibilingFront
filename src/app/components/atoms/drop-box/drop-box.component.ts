@@ -16,21 +16,14 @@ export class DropBoxComponent {
   @Input() state: 'default' | 'loaded' | 'disabled' = 'default';
   @Input() error: boolean = false;
   @Input() information: string = 'Informational Text';
-  @Input() icon: string = ''; 
+  @Input() icon: string = '';
+  @Input() fileExtensions: string = '';
   @Input() required: boolean = true;
+  @Input() showHint: boolean = true;
   fileName: string = '';
 
   getAcceptType(): string {
-    switch(this.icon) {
-      case 'image':
-        return '.jpg,.jpeg,.png,.gif';
-      case 'pdf':
-        return '.pdf';
-      case 'csv':
-        return '.csv';
-      default:
-        return '';
-    }
+    return this.fileExtensions;
   }
 
   isValidFileType(fileName: string): boolean {

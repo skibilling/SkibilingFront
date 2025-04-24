@@ -1,0 +1,27 @@
+<div class="camera-info-container">
+  <app-titles [text]="'2.1. Sube o toma una foto'" [color]="'#000'"></app-titles>
+  
+  <app-simple-text 
+    [text]="'Selecciona un archivo o captura una imagen de tus datos fiscales. Solo se extraerá la información claramente legible.\n\nIncluye si es posible:\nRFC\nRégimen fiscal\nUso de CFDI\nNombre o razón social\nCorreo electrónico\nCódigo postal o dirección completa'"
+    [color]="'#000'">
+  </app-simple-text>
+
+  <app-hint 
+    [type]="'info'"
+    [text]="'Nota: Tus datos deben coincidir con el identificador correspondiente.'">
+  </app-hint>
+
+  <app-drop-box
+    [information]="'Obtener mi Constancia de Situación Fiscal'"
+    [icon]="'Image.svg'"
+    [fileExtensions]="'.jpg'">
+  </app-drop-box>
+
+  <app-divider [text]="'o si prefieres'"></app-divider>
+
+  <app-custom-button
+    [type]="'secondary'"
+    [text]="'Tomar foto de tus datos fiscales'"
+    [icon]="'Upload.svg'">
+  </app-custom-button>
+</div>

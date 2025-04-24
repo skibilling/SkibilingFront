@@ -17,7 +17,7 @@
              (change)="onFileSelected($event)">
     </label>
   </div>
-  <app-hint [text]="information" [type]="error ? 'error' : 'info'"></app-hint>
+  <app-hint *ngIf="showHint" [text]="information" [type]="error ? 'error' : 'info'"></app-hint>
 </div>
 
 <!-- Div para estado disabled -->
@@ -38,5 +38,5 @@
              disabled>
     </label>
   </div>
-  <app-hint [text]="information" type="info"></app-hint>
+  <app-hint *ngIf="showHint" [text]="information" type="info"></app-hint>
 </div>

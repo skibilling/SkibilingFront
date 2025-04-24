@@ -10,12 +10,12 @@ import { LandingComponent } from '../landing/landing.component';
 import { DividerComponent } from "../../atoms/divider/divider.component";
 import { TicketsPageComponent } from '../tickets-page/tickets-page.component';
 import { ContentFiscalDataComponent } from "../../organisms/content-fiscal-data/content-fiscal-data.component";
-import { TicketItemComponent } from "../../molecules/ticket-item/ticket-item.component";
+import { ContentInfoCameraComponent } from '../../organisms/content-info-camera/content-info-camera.component';
 
 @Component({
   selector: 'app-pruebas',
   standalone: true,
-  imports: [CommonModule, SvgIconComponent, HintComponent, DropBoxComponent, StatusBillingComponent, StatusTicketsComponent, NavigationBarComponent, LandingComponent, DividerComponent, TicketsPageComponent, ContentFiscalDataComponent, TicketItemComponent],
+  imports: [CommonModule, SvgIconComponent, HintComponent, DropBoxComponent, StatusBillingComponent, StatusTicketsComponent, NavigationBarComponent, LandingComponent, DividerComponent, TicketsPageComponent, ContentFiscalDataComponent, ContentInfoCameraComponent],
   templateUrl: './pruebas.component.html',
   styleUrls: ['./pruebas.component.css']
 })
