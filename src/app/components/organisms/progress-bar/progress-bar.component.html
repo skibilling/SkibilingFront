@@ -23,13 +23,15 @@
             ></app-step-one>
           </div>
           <div *ngSwitchCase="2" class="step">
-            <h2>Paso 2: Información del Edificio</h2>
-            <!-- Contenido del paso 2 -->
-            <app-content-fiscal-data></app-content-fiscal-data>
+            <h2>Paso 2: Datos Fiscales</h2>
+            <!-- Modificar esta línea para capturar el evento advance -->
+            <app-content-fiscal-data 
+              (advance)="advanceToStepThree()">
+            </app-content-fiscal-data>
           </div>
           <div *ngSwitchCase="3" class="step">
             <h2>Paso 3: Información del Usuario</h2>
-            <app-upload-photo></app-upload-photo>
+            <app-form-information (advance)="advanceToStepFour()"></app-form-information>
           </div>
           <div *ngSwitchCase="4" class="step">
             <h2>Paso 4: Confirmación</h2>

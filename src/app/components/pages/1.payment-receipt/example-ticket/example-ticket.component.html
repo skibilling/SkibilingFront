@@ -1,0 +1,13 @@
+<app-titles
+  text="Ejemplo de Comprobante"
+  color="#000"
+></app-titles>
+<app-simple-text
+  text="Selecciona el tipo de servicio para ver cómo se ve el comprobante y familiarízate con la información que contiene."
+></app-simple-text>
+<app-select-field
+    icon="Building.svg"
+    [label]="'Tipo de servicio'"
+    [required]="true"
+    [options]="ServicesTypesOptions"
+></app-select-field>

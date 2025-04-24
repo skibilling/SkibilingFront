@@ -1,0 +1,120 @@
+<div class="form-information-container">
+    <!-- Sección de Datos de Identificación -->
+    <app-titles
+        text="3. Datos de Identificación"
+    ></app-titles>
+    
+    <div class="instructions">
+        <ol>
+            <li>Razón social o nombre completo tal como aparece en el SAT</li>
+            <li>Correo electrónico para recibir la factura</li>
+        </ol>
+    </div>
+    
+    <app-input-field
+        label="Nombre *"
+        [required]="true"
+        placeholder="Nombre completo"
+        icon="User.svg"
+        [(value)]="nombre"
+    ></app-input-field>
+    
+    <app-input-field
+        label="Correo Electrónico *"
+        [required]="true"
+        placeholder="ejemplo@correo.com"
+        icon="Mail.svg"
+        [(value)]="email"
+    ></app-input-field>
+
+    <!-- Sección de Dirección de Facturación -->
+    <app-titles
+        text="4. Dirección de la facturación"
+    ></app-titles>
+    
+    <app-input-field
+        label="Código Postal *"
+        [required]="true"
+        placeholder="Ej. 01000"
+        icon="Mailbox.svg"
+        [(value)]="codigoPostal"
+    ></app-input-field>
+
+    <!-- Checkbox para mostrar u ocultar la dirección completa -->
+    <app-check-selector
+        text="¿Deseas mostrar la dirección completa en tu factura?"
+    ></app-check-selector>
+
+    <!-- Sección de dirección completa (visible solo cuando showFullAddress es true) -->
+    <div class="full-address-section" *ngIf="showFullAddress">
+        <app-titles
+            text="Dirección completa"
+        ></app-titles>
+        
+        <app-input-field
+            label="Calle *"
+            [required]="true"
+            placeholder="Ej. BLVD. LA LUZ"
+            icon="MapPin.svg"
+            [(value)]="calle"
+        ></app-input-field>
+        
+        <app-input-field
+            label="Colonia *"
+            [required]="true"
+            placeholder="Ej. COL. LAS FUENTES"
+            icon="MapPost.svg"
+            [(value)]="colonia"
+        ></app-input-field>
+        
+        <div class="address-row">
+            <app-input-field
+                label="Número interior"
+                placeholder="Ej. 2011"
+                icon="DoorOpen.svg"
+                [(value)]="numeroInterior"
+                class="half-width"
+            ></app-input-field>
+            
+            <app-input-field
+                label="Número exterior *"
+                [required]="true"
+                placeholder="Ej. 10"
+                icon="DoorClosed.svg"
+                [(value)]="numeroExterior"
+                class="half-width"
+            ></app-input-field>
+        </div>
+        
+        <app-select-field
+            label="Municipio *"
+            [required]="true"
+            placeholder="Selecciona un municipio"
+            icon="Building.svg"
+            [options]="municipios"
+        ></app-select-field>
+        
+        <app-select-field
+            label="Estado *"
+            [required]="true"
+            placeholder="Selecciona un estado"
+            icon="MapPin.svg"
+            [options]="estados"
+        ></app-select-field>
+        
+        <app-custom-button
+            text="Guardar dirección"
+            type="secondary"
+            (buttonClick)="saveAddress()"
+            class="save-address-btn"
+        ></app-custom-button>
+    </div>
+
+    <!-- Botón para continuar al siguiente paso -->
+    <app-custom-button
+        text="Continuar a la validación de datos"
+        type="primary"
+        (buttonClick)="advanceToStepFour()"
+        class="advance-btn"
+    ></app-custom-button>
+</div>

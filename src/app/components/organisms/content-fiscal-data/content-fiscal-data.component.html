@@ -47,7 +47,8 @@
   <div *ngIf="!mostrarCamara">
     <app-custom-button
       [type]="'primary'"
-      [text]="'Continuar con el siguiente paso'">
+      [text]="'Continuar con el siguiente paso'"
+      (click)="advanceToStepThree()">
     </app-custom-button>
   </div>
 </div>

@@ -1,4 +1,4 @@
-<div *ngIf="currentView == 'validation'">
+<div >
     <app-titles
         text="Paso Final"
     ></app-titles>
@@ -81,7 +81,7 @@
 </div>
 
 <app-final-message 
-    *ngIf="currentView === 'final-message'"
+    *ngIf="currentStep === 2"
     (reload)="onReload()"
     (toContactPage)="onContactPage()"
     (toMyInvoices)="onMyInvoices()"
