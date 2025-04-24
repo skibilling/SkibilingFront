@@ -1,11 +1,24 @@
+<div *ngIf="!mostrarInterfazCamara">
 <app-custom-button
     type="primary"
     text="Tomar foto del comprobante"
     icon="Camera.svg"
     [useAssetIcon]="true"
+    (click)="mostrarCamara()"
 ></app-custom-button>
 <app-custom-button
     type="primary"
     text="Ayuda"
     (click)="openHelp()"
 ></app-custom-button>
+</div>
+<div *ngIf="mostrarInterfazCamara">
+    <app-camera [mode]="'ticket'" (fotoTomada)="onFotoTomada($event)"></app-camera>
+    <div class="botones-navegacion">
+      <app-custom-button
+        type="secondary"
+        text="Volver"
+        (buttonClick)="volverAForm()">
+      </app-custom-button>
+    </div>
+</div>
