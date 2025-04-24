@@ -25,14 +25,9 @@ import { ContentInfoCameraComponent } from '../content-info-camera/content-info-
   styleUrls: ['./content-fiscal-data.component.css']
 })
 export class ContentFiscalDataComponent {
-  @Input() currentStep: number = 1;
-  @Output() nextStep = new EventEmitter<void>();
   CFDIUsesOptions = [
     { value: 'G01', label: 'Adquisición de mercancías' },
     { value: 'G02', label: 'Devoluciones, descuentos o bonificaciones' },
     { value: 'G03', label: 'Gastos en general' }
   ]
-  onNextStep() {
-    this.currentStep = 2;
-  }
 }
