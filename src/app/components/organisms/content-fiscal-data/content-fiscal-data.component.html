@@ -1,4 +1,4 @@
-<div class="fiscal-data-container">
+<div class="fiscal-data-container" *ngIf="currentStep === 1">
   <div>
     <app-titles [text]="'2. Datos fiscales'" [color]="'#000'"></app-titles>
   
@@ -11,7 +11,9 @@
       [type]="'tertiary'"
       [text]="'Rellenar automáticamente'"
       [icon]="'FileText.svg'"
-      [useAssetIcon]="true">
+      [useAssetIcon]="true"
+      (click)="Rellenar()">
+      
     </app-custom-button>
   </div>
 

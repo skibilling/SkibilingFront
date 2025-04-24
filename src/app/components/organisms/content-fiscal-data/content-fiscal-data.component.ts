@@ -26,9 +26,14 @@ import { ContentInfoCameraComponent } from '../content-info-camera/content-info-
 })
 export class ContentFiscalDataComponent {
   @Input() mostrarCamara: boolean = false;
+  currentStep: number = 1;
+  @Output() back = new EventEmitter<void>();
   CFDIUsesOptions = [
     { value: 'G01', label: 'Adquisición de mercancías' },
     { value: 'G02', label: 'Devoluciones, descuentos o bonificaciones' },
     { value: 'G03', label: 'Gastos en general' }
   ]
+  Rellenar(){
+    this.currentStep = 2;
+  }
 }
