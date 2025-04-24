@@ -11,7 +11,7 @@ import { CommonModule } from '@angular/common';
 export class CheckSelectorComponent {
   @Input() selected: boolean = false;
   @Output() selectionChange = new EventEmitter<boolean>();
-
+  @Input() text: string = '';
   toggleSelection(): void {
     this.selected = !this.selected;
     this.selectionChange.emit(this.selected);

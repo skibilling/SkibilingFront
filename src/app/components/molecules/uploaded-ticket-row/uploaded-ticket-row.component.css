@@ -1,0 +1,103 @@
+.ticket-row {
+  background: white;
+  border: 1px solid #E5E5E5;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.ticket-row:hover {
+  border-color: #f07718;
+  box-shadow: 0 2px 8px rgba(240, 119, 24, 0.1);
+}
+
+.ticket-row.selected {
+  border-color: #f07718;
+  background-color: rgba(240, 119, 24, 0.05);
+}
+
+.ticket-content {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.ticket-icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-container {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background-color: #F5F5F5;
+}
+
+.receipt-icon {
+  background-color: #FFF3E0;
+  color: #F57C00;
+}
+
+.image-icon {
+  background-color: #E3F2FD;
+  color: #1976D2;
+}
+
+.ticket-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ticket-name {
+  font-size: 0.875rem;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.ticket-status {
+  padding: 0.25rem 0.75rem;
+  border-radius: 16px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.expand-button {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.expand-button:hover {
+  opacity: 0.8;
+}
+
+.ticket-expanded {
+  border-top: 1px solid #E5E5E5;
+  padding: 1rem;
+  background-color: #F9F9F9;
+}
+
+.ticket-details {
+  font-size: 0.875rem;
+  color: #666;
+}
+
+.selected {
+  background-color: rgba(33, 150, 243, 0.05);
+}

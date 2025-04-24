@@ -8,6 +8,7 @@
   <app-drop-box
       [icon]="'image'"
       [state]="selectedFile ? 'loaded' : 'default'"
+      (fileSelected)="onFileSelected($event)"
   ></app-drop-box>
   <app-hint
   type="link"
@@ -28,6 +29,7 @@
       type="primary"
       text="Agregar Comprobante"
       [disabled]="!selectedFile"
+      (click)="onSubmit()"
   ></app-custom-button>
   <app-custom-button
   type="secondary"

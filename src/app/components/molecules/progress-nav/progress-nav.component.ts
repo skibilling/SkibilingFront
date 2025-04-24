@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavItemComponent } from '../../atoms/nav-item/nav-item.component';
 
@@ -17,4 +17,12 @@ export interface NavStep {
 })
 export class ProgressNavComponent {
   @Input() steps: NavStep[] = [];
+  @Output() stepSelected = new EventEmitter<number>();
+
+  onStepClick(index: number) {
+    this.steps.forEach((step, i) => {
+      step.active = i === index;
+    });
+    this.stepSelected.emit(index);
+  }
 }

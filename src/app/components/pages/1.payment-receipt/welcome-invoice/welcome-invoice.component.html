@@ -1,0 +1,25 @@
+<app-titles
+text="Bienvenido"
+></app-titles>
+
+<app-simple-text
+text="Factura tus compras de manera rápida y sencilla. Ten tus datos fiscales, comprobantes y dirección de facturación listos."
+></app-simple-text>
+
+<app-check-selector
+[text]="'He leido y acepto el aviso de privacidad'"
+[selected]="isPrivacyAccepted"
+(selectionChange)="onPrivacyChange($event)"
+></app-check-selector>
+
+<app-hint
+text="Consulta el aviso de privacidad"
+type="link"
+></app-hint>
+
+<app-custom-button
+text="Iniciar Facturación"
+type="primary"
+[disabled]="!isPrivacyAccepted"
+(click)="onStartInvoicing()"
+></app-custom-button>

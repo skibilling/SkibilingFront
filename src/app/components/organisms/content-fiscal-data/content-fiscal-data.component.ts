@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output,EventEmitter,Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitlesComponent } from '../../atoms/titles/titles.component';
 import { SimpleTextComponent } from '../../atoms/simple-text/simple-text.component';
@@ -25,15 +25,9 @@ import { ContentInfoCameraComponent } from '../content-info-camera/content-info-
   styleUrls: ['./content-fiscal-data.component.css']
 })
 export class ContentFiscalDataComponent {
-  mostrarCamara: boolean = false;
-  
   CFDIUsesOptions = [
     { value: 'G01', label: 'Adquisición de mercancías' },
     { value: 'G02', label: 'Devoluciones, descuentos o bonificaciones' },
     { value: 'G03', label: 'Gastos en general' }
-  ];
-
-  mostrarContentInfoCamera(): void {
-    this.mostrarCamara = true;
-  }
+  ]
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { Router } from '@angular/router';
@@ -9,22 +9,26 @@ import { StepOneComponent } from '../../pages/1.payment-receipt/step-one/step-on
 import { UploadManualTokenComponent } from '../../pages/1.payment-receipt/upload-manual-token/upload-manual-token.component';
 import { UploadFileComponent } from '../../pages/1.payment-receipt/upload-file/upload-file.component';
 import { UploadPhotoComponent } from '../../pages/1.payment-receipt/upload-photo/upload-photo.component';
+import { ContentFiscalDataComponent } from '../content-fiscal-data/content-fiscal-data.component';
+import { WelcomeInvoiceComponent } from '../../pages/1.payment-receipt/welcome-invoice/welcome-invoice.component';
+import { PageValidationComponent } from '../../pages/4.data.Validation/page-validation/page-validation.component';
 @Component({
   selector: 'app-progress-bar',
   standalone: true,
   imports: [CommonModule, StepperComponent, PageFormComponent,StepComponent,
-    StepOneComponent,UploadManualTokenComponent,UploadFileComponent,UploadPhotoComponent],
+    StepOneComponent,UploadManualTokenComponent,UploadFileComponent,UploadPhotoComponent,
+  ContentFiscalDataComponent,WelcomeInvoiceComponent,PageValidationComponent],
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.css']
 })
 export class ProgressBarComponent implements OnInit {
-  currentStep: number = 1;
-  highestStepReached: number = 1; // Almacena el paso más alto alcanzado
+  currentStep: number = 0;
+  highestStepReached: number = 0; // Almacena el paso más alto alcanzado
   showMessage: boolean = false;
   message: string = '';
   isNavigatingBack: boolean = false;
   isProcessCompleted: boolean=false;
-
+  @Output() advance = new EventEmitter<void>();
   constructor(private router: Router) {}
 
   ngOnInit(): void {
@@ -55,7 +59,9 @@ export class ProgressBarComponent implements OnInit {
       this.onStepChange(this.currentStep - 1);
     }
   }
-
+  handleStartInvoicing() {
+    this.nextStep(); // Avanzar al paso 1
+  }
   finishProcess(): void {
     // Aquí iría la lógica para finalizar el proceso
     this.currentStep = 5;
@@ -66,5 +72,10 @@ export class ProgressBarComponent implements OnInit {
   // Método para verificar si un paso está disponible para navegación
   isStepAvailable(step: number): boolean {
     return step <= this.highestStepReached;
+  }
+  advanceToStepTwo(): void {
+    console.log('avanzando a paso 222222');
+    this.currentStep = 2;
+    this.highestStepReached = 2;
   }
 } 
