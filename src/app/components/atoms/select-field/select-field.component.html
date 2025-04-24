@@ -14,7 +14,8 @@
     <div class="select-wrapper" (click)="toggleDropdown()">
       <select 
         [(ngModel)]="selectedValue" 
-        [class.has-value]="selectedValue">
+        [class.has-value]="selectedValue"
+        [disabled]="isDisabled">
         <option value="" disabled selected hidden>{{ placeholder }}</option>
         <option *ngFor="let opt of options" [value]="opt.value">{{ opt.label }}</option>
       </select>

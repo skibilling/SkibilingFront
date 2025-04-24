@@ -37,8 +37,7 @@
   </div>
 
   <div *ngIf="mostrarInterfazCamara">
-    <app-camera [modo]="ticket" (fotoTomada)="onFotoTomada($event)"></app-camera>
-    
+    <app-camera [mode]="'ticket'" (fotoTomada)="onFotoTomada($event)"></app-camera>
     <div class="botones-navegacion">
       <app-custom-button
         type="secondary"

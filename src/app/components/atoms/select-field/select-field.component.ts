@@ -22,6 +22,7 @@ export class SelectFieldComponent {
   @Input() options: Option[] = [];
   @Input() required: boolean = true;
   @Input() initialValue: string = '';
+  @Input() isDisabled: boolean = false;
 
   @Output() selectionChange = new EventEmitter<{value: string, label: string}>();
   @Output() selectedValueChange = new EventEmitter<string>();

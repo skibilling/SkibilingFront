@@ -12,11 +12,12 @@ import { TicketsPageComponent } from '../tickets-page/tickets-page.component';
 import { ContentFiscalDataComponent } from "../../organisms/content-fiscal-data/content-fiscal-data.component";
 import { ContentInfoCameraComponent } from '../../organisms/content-info-camera/content-info-camera.component';
 import { CameraComponent } from "../../organisms/camera/camera.component";
+import { SelectFieldComponent } from "../../atoms/select-field/select-field.component";
 
 @Component({
   selector: 'app-pruebas',
   standalone: true,
-  imports: [CommonModule, SvgIconComponent, HintComponent, DropBoxComponent, StatusBillingComponent, StatusTicketsComponent, NavigationBarComponent, LandingComponent, DividerComponent, TicketsPageComponent, ContentFiscalDataComponent, ContentInfoCameraComponent, CameraComponent],
+  imports: [CommonModule, SvgIconComponent, HintComponent, DropBoxComponent, StatusBillingComponent, StatusTicketsComponent, NavigationBarComponent, LandingComponent, DividerComponent, TicketsPageComponent, ContentFiscalDataComponent, ContentInfoCameraComponent, CameraComponent, SelectFieldComponent],
   templateUrl: './pruebas.component.html',
   styleUrls: ['./pruebas.component.css']
 })

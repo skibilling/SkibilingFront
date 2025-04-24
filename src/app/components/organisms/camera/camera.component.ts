@@ -13,7 +13,7 @@ import { FiscalAnalysisService } from '../../../services/fiscal-analysis.service
 export class CameraComponent implements OnInit {
   @ViewChild('video', { static: false }) video!: ElementRef;
   @Output() fotoTomada = new EventEmitter<string>();
-  @Input() modo: 'fiscal' | 'ticket' = 'fiscal';
+  @Input() mode: 'fiscal' | 'ticket' = 'fiscal';
   
   stream!: MediaStream;
   foto: string = '';
@@ -84,8 +84,10 @@ export class CameraComponent implements OnInit {
           // Guardar la imagen en el servicio
           this.imageService.setCapturedImage(this.foto, blob);
           
+          console.log('Modo:', this.mode);
           // Enviar la imagen al servicio de análisis según el modo
-          if (this.modo === 'fiscal') {
+          if (this.mode == "fiscal") {
+            console.log(this.mode == "fiscal");
             this.fiscalAnalysisService.analyzeFiscalData(blob).subscribe({
               next: (resultado) => {
                 console.log('Resultado del análisis fiscal:', resultado);
@@ -94,7 +96,8 @@ export class CameraComponent implements OnInit {
                 console.error('Error al analizar datos fiscales:', error);
               }
             });
-          } else if (this.modo === 'ticket') {
+          } else if (this.mode == "ticket") {
+            console.log(this.mode == "ticket");
             this.fiscalAnalysisService.analyzeTicket(blob).subscribe({
               next: (resultado) => {
                 console.log('Resultado del análisis de ticket:', resultado);
