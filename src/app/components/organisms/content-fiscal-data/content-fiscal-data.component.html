@@ -1,0 +1,48 @@
+<div class="fiscal-data-container">
+  <div>
+    <app-titles [text]="'2. Datos fiscales'" [color]="'#000'"></app-titles>
+  
+    <app-simple-text 
+      [text]="'Puedes subir un PDF o una imagen con tus datos fiscales para rellenar automáticamente, ya sea una foto de un documento en papel o una imagen guardada. Si lo prefieres, también puedes tomar la foto ahora.'"
+      [color]="'#000'">
+    </app-simple-text>
+
+    <app-custom-button
+      [type]="'tertiary'"
+      [text]="'Rellenar automáticamente'"
+      [icon]="'FileText.svg'"
+      [useAssetIcon]="true">
+    </app-custom-button>
+  </div>
+  <app-divider [text]="'o escribir manualmente'"></app-divider>
+  <div>
+    <app-input-field
+      [icon]="'IdCard.svg'"
+      [label]="'RFC'"
+      [required]="true"
+      [placeholder]="'ABCD123456XX0'">
+    </app-input-field>
+
+    <app-select-field
+      [icon]="'Building.svg'"
+      [label]="'Régimen Fiscal'"
+      [required]="true"
+      [options]="CFDIUsesOptions">
+    </app-select-field>
+
+    <app-select-field
+      [icon]="'BookMarked.svg'"
+      [label]="'Uso CFDI'"
+      [required]="true"
+      [options]="CFDIUsesOptions">
+    </app-select-field>
+  </div>
+  
+  <div>
+    <app-custom-button
+      [type]="'primary'"
+      [text]="'Continuar con el siguiente paso'">
+    </app-custom-button>
+  </div>
+  
+</div>
