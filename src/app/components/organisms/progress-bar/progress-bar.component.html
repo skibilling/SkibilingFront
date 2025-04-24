@@ -1,5 +1,5 @@
 <div class="payment-receipt-container">
-    <app-stepper 
+    <app-stepper *ngIf="currentStep!==0"
       [currentStep]="currentStep"
       [highestStepReached]="highestStepReached"
       [isProcessCompleted]="isProcessCompleted"
@@ -10,6 +10,11 @@
       <!-- Contenido del paso actual -->
       <div class="step-content" [class.navigating]="isNavigatingBack">
         <ng-container [ngSwitch]="currentStep">
+          <div *ngSwitchCase="0" class="step">
+            <app-welcome-invoice 
+              (startInvoicing)="handleStartInvoicing()">
+            </app-welcome-invoice>
+          </div>
           <div *ngSwitchCase="1" class="step">
             <h2>Paso 1: Información del Ticket</h2>
             <!-- Contenido del paso 1 -->
@@ -18,7 +23,7 @@
           <div *ngSwitchCase="2" class="step">
             <h2>Paso 2: Información del Edificio</h2>
             <!-- Contenido del paso 2 -->
-            <app-step-two></app-step-two>
+            <app-content-fiscal-data></app-content-fiscal-data>
           </div>
           <div *ngSwitchCase="3" class="step">
             <h2>Paso 3: Información del Usuario</h2>

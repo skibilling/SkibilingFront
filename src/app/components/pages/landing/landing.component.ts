@@ -6,6 +6,7 @@ import { TitlesComponent } from '../../atoms/titles/titles.component';
 import { SimpleTextComponent } from '../../atoms/simple-text/simple-text.component';
 import { ProgressBarComponent } from '../../organisms/progress-bar/progress-bar.component';
 import{ MatBottomSheet } from '@angular/material/bottom-sheet';
+import { WelcomeInvoiceComponent } from '../1.payment-receipt/welcome-invoice/welcome-invoice.component';
 @Component({
   selector: 'app-landing',
   standalone: true,
