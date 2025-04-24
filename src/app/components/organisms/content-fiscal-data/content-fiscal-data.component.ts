@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Output,EventEmitter,Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitlesComponent } from '../../atoms/titles/titles.component';
 import { SimpleTextComponent } from '../../atoms/simple-text/simple-text.component';
@@ -6,6 +6,7 @@ import { CustomButtonComponent } from '../../atoms/custom-button/custom-button.c
 import { DividerComponent } from '../../atoms/divider/divider.component';
 import { InputFieldComponent } from '../../atoms/input-field/input-field.component';
 import { SelectFieldComponent } from '../../atoms/select-field/select-field.component';
+import { ContentInfoCameraComponent } from '../content-info-camera/content-info-camera.component';
 
 @Component({
   selector: 'app-content-fiscal-data',
@@ -17,15 +18,21 @@ import { SelectFieldComponent } from '../../atoms/select-field/select-field.comp
     CustomButtonComponent,
     DividerComponent,
     InputFieldComponent,
-    SelectFieldComponent
+    SelectFieldComponent,
+    ContentInfoCameraComponent
   ],
   templateUrl: './content-fiscal-data.component.html',
   styleUrls: ['./content-fiscal-data.component.css']
 })
 export class ContentFiscalDataComponent {
+  @Input() currentStep: number = 1;
+  @Output() nextStep = new EventEmitter<void>();
   CFDIUsesOptions = [
     { value: 'G01', label: 'Adquisición de mercancías' },
     { value: 'G02', label: 'Devoluciones, descuentos o bonificaciones' },
     { value: 'G03', label: 'Gastos en general' }
   ]
+  onNextStep() {
+    this.currentStep = 2;
+  }
 }

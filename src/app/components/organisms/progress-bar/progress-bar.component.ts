@@ -9,11 +9,13 @@ import { StepOneComponent } from '../../pages/1.payment-receipt/step-one/step-on
 import { UploadManualTokenComponent } from '../../pages/1.payment-receipt/upload-manual-token/upload-manual-token.component';
 import { UploadFileComponent } from '../../pages/1.payment-receipt/upload-file/upload-file.component';
 import { UploadPhotoComponent } from '../../pages/1.payment-receipt/upload-photo/upload-photo.component';
+import { ContentFiscalDataComponent } from '../content-fiscal-data/content-fiscal-data.component';
 @Component({
   selector: 'app-progress-bar',
   standalone: true,
   imports: [CommonModule, StepperComponent, PageFormComponent,StepComponent,
-    StepOneComponent,UploadManualTokenComponent,UploadFileComponent,UploadPhotoComponent],
+    StepOneComponent,UploadManualTokenComponent,UploadFileComponent,UploadPhotoComponent,
+  ContentFiscalDataComponent],
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.css']
 })
