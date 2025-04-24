@@ -25,6 +25,7 @@ import { ContentInfoCameraComponent } from '../content-info-camera/content-info-
   styleUrls: ['./content-fiscal-data.component.css']
 })
 export class ContentFiscalDataComponent {
+  @Input() mostrarCamara: boolean = false;
   CFDIUsesOptions = [
     { value: 'G01', label: 'Adquisición de mercancías' },
     { value: 'G02', label: 'Devoluciones, descuentos o bonificaciones' },
