@@ -1,0 +1,13 @@
+<!-- camera.component.html -->
+<p>Hola</p>
+<div>
+    <video #video width=100% height=100% autoplay playsinline></video>
+  </div>
+  <div>
+    <app-custom-button (click)="iniciarCamara()"></app-custom-button>
+    <button (click)="tomarFoto()">Tomar foto</button>
+  </div>
+  <div *ngIf="foto">
+    <p>Vista previa de la foto:</p>
+    <img [src]="foto" alt="Foto tomada" />
+  </div>
