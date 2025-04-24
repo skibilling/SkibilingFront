@@ -29,7 +29,9 @@ export class UploadFileComponent {
         type: 'photo',
         file: this.selectedFile
       });
+     
     }
+    this.complete.emit()
   }
 }
 

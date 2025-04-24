@@ -91,4 +91,15 @@ export class ProgressBarComponent implements OnInit {
     this.currentStep = 4;
     this.advance.emit(); // Emitir el evento de avance
   }
-} 
+  goTo(step: number): void {
+    console.log(`Navegando al paso ${step}`);
+    
+    // Validar que el paso esté dentro del rango válido
+    if (step >= 0 && step <= this.highestStepReached) {
+      this.currentStep = step;
+      this.isNavigatingBack = step < this.currentStep;
+    } else {
+      console.warn(`Intento de navegación a un paso no permitido: ${step}`);
+    }
+  }
+}

@@ -7,6 +7,7 @@ import { SimpleTextComponent } from '../../atoms/simple-text/simple-text.compone
 import { ProgressBarComponent } from '../../organisms/progress-bar/progress-bar.component';
 import{ MatBottomSheet } from '@angular/material/bottom-sheet';
 import { WelcomeInvoiceComponent } from '../1.payment-receipt/welcome-invoice/welcome-invoice.component';
+import { LastInvoicesComponent } from '../last-invoices/last-invoices.component';
 @Component({
   selector: 'app-landing',
   standalone: true,
@@ -23,5 +24,10 @@ export class LandingComponent {
           panelClass: 'custom-bottom-sheet',
           // disableClose si quieres que solo se cierre manualmente, etc.
         });
+      }
+      openMyLastBillings(): void {
+        this.bottomSheet.open(LastInvoicesComponent,{
+          panelClass: 'custom-bottom-sheet',
+        })
       }
 }
