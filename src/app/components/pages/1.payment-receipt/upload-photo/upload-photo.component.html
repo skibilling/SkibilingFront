@@ -1,0 +1,39 @@
+<div *ngIf="!showCameraPreview">
+  <app-titles
+  text="1.1 Agregar Comprobante con una imagen"
+  color="#000"></app-titles>
+  <app-simple-text
+  text="Toma una foto o súbela desde tu galeria para extraer los datos de forma automatica"
+  ></app-simple-text>
+  <app-drop-box
+      [icon]="'image'"
+      [state]="selectedFile ? 'loaded' : 'default'"
+  ></app-drop-box>
+  <app-hint
+  type="link"
+  text="Ver imagen de ejemplo"
+  ></app-hint>
+  <app-divider
+  text="o si prefieres"
+  ></app-divider>
+
+  <app-custom-button
+      type="tertiary"
+      text="Tomar foto del comprobante"
+      icon="Camera.svg"
+      [useAssetIcon]="true"
+    (click)="openCamera()"
+  ></app-custom-button>
+  <app-custom-button
+      type="primary"
+      text="Agregar Comprobante"
+      [disabled]="!selectedFile"
+  ></app-custom-button>
+  <app-custom-button
+  type="secondary"
+  text="Volver"
+  icon="CircleX.svg"
+  [useAssetIcon]="true"
+  (buttonClick)="onGoBack()">
+</app-custom-button>
+</div>
