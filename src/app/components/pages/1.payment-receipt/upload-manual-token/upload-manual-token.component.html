@@ -1,0 +1,35 @@
+<app-titles 
+text="1.2 Agregar Comprobante manualmente "
+color="#000"></app-titles>
+<app-simple-text 
+text="Sube tu comprobante para generar la factura. Si necesitas más de uno, podrás agregarlo después."
+></app-simple-text>
+<app-hint 
+text="Ingresa tu token de facturación. Verifica cuidadosamente que sea correcto antes de guardarlo"
+type="link"
+></app-hint>
+
+<app-input-field
+    label="Token de facturación"
+    placeholder="Ingresa tu token de facturación"
+    type="text"
+    icon="Token.svg"
+    [required]="true"
+    [(value)]="token"
+    (valueChange)="onTokenChange($event)"
+></app-input-field>
+<app-custom-button
+  type="primary"
+  text="Agregar Comprobante"
+  [disabled]="!isTokenValid"
+  (click)="onTokenSubmit($event)"
+>
+</app-custom-button>
+
+<app-custom-button
+type="secondary"
+text="Volver"
+icon="CircleX.svg"
+[useAssetIcon]="true"
+(buttonClick)="onGoBack()">
+</app-custom-button>

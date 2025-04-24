@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ProgressBarComponent } from '../../organisms/progress-bar/progress-bar.component';
+import { LandingComponent } from '../landing/landing.component';
 
 @Component({
     selector: 'app-page-form',
     standalone: true,
-    imports:[CommonModule],
+    imports:[CommonModule,LandingComponent],
     templateUrl: './page-form.component.html',
     styleUrls: ['./page-form.component.css']
 })

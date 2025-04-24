@@ -1,0 +1,32 @@
+<app-titles
+text="Subir Archivo TXT"
+color="#000"></app-titles>
+<app-simple-text
+text="Selecciona o arrastra tu archivo .txt con los tokens de facturación de los comprobantes qeu deseas facturar"
+></app-simple-text>
+<app-drop-box
+    [information]="'Seleccionar TXT'"
+    [icon]="'txt'"
+></app-drop-box>
+<app-hint
+type="link"
+text="¿Como identificar el token?"
+></app-hint>
+
+<app-custom-button
+    type="secondary"
+    text="Descarga un archivo de ejemplo para guiarte"
+></app-custom-button>
+<app-custom-button
+    type="primary"
+    text="Subir archivo"
+    [useAssetIcon]="true"
+></app-custom-button>
+
+<app-custom-button
+type="secondary"
+text="Volver"
+icon="CircleX.svg"
+[useAssetIcon]="true"
+(buttonClick)="onGoBack()">
+</app-custom-button>

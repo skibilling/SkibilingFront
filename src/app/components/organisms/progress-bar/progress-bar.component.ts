@@ -4,11 +4,16 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { StepperComponent } from '../../molecules/stepper/stepper.component';
 import { PageFormComponent } from '../../pages/page-form/page-form.component';
-
+import { StepComponent } from '../../atoms/step/step.component';
+import { StepOneComponent } from '../../pages/1.payment-receipt/step-one/step-one.component';
+import { UploadManualTokenComponent } from '../../pages/1.payment-receipt/upload-manual-token/upload-manual-token.component';
+import { UploadFileComponent } from '../../pages/1.payment-receipt/upload-file/upload-file.component';
+import { UploadPhotoComponent } from '../../pages/1.payment-receipt/upload-photo/upload-photo.component';
 @Component({
   selector: 'app-progress-bar',
   standalone: true,
-  imports: [CommonModule, StepperComponent, PageFormComponent],
+  imports: [CommonModule, StepperComponent, PageFormComponent,StepComponent,
+    StepOneComponent,UploadManualTokenComponent,UploadFileComponent,UploadPhotoComponent],
   templateUrl: './progress-bar.component.html',
   styleUrls: ['./progress-bar.component.css']
 })
