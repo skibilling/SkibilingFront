@@ -36,7 +36,13 @@
     </app-custom-button>
   </div>
 
-  <div *ngIf="mostrarInterfazCamara" class="camera-interface">
-    <app-camera></app-camera>
+  <div *ngIf="mostrarInterfazCamara">
+    <app-camera (fotoTomada)="onFotoTomada($event)"></app-camera>
+    
+    <div *ngIf="fotoCapturada" class="foto-preview">
+      <h3>Foto capturada:</h3>
+      <p> {{ fotoCapturada }}</p>
+      <img [src]="fotoCapturada" alt="Foto capturada" style="max-width: 100%;" />
+    </div>
   </div>
 </div>
