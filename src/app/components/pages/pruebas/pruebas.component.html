@@ -1,5 +1,39 @@
 <p>pruebas works!</p>
 <!--<app-icon-prueba [name]="'Bus'" [height]="'600'" [width]="'600'" [color]="'orange'"></app-icon-prueba>-->
+
+<!-- Sección de cámara y respuesta de la API -->
+<div class="camera-section">
+  <h2>Prueba de cámara</h2>
+  
+  <div class="mode-selector">
+    <button [class.active]="camaraMode === 'fiscal'" (click)="cambiarModoCamara('fiscal')">Modo Factura</button>
+    <button [class.active]="camaraMode === 'ticket'" (click)="cambiarModoCamara('ticket')">Modo Ticket</button>
+  </div>
+  
+  <p>Modo actual: <strong>{{ camaraMode === 'fiscal' ? 'Factura' : 'Ticket' }}</strong></p>
+  
+  <!-- Componente de la cámara -->
+  <app-camera [mode]="camaraMode" (fotoTomada)="procesarFotoTomada($event)"></app-camera>
+  
+  <!-- Indicador de procesamiento -->
+  <div *ngIf="procesando" class="processing-indicator">
+    <p>Procesando imagen y obteniendo datos desde la API...</p>
+  </div>
+</div>
+
+<!-- Sección de Formulario Editable de Datos Fiscales -->
+<div class="editable-form-section">
+  <h2>Formulario con Datos de la API</h2>
+  <app-editable [rfc]="fiscalData?.rfc || ''" (formSubmit)="enviarDatos($event)"></app-editable>
+  
+  <!-- Información de los datos fiscales detectados -->
+  <div *ngIf="fiscalData">
+    <h3>Datos Fiscales Detectados:</h3>
+    <p><strong>RFC:</strong> {{ fiscalData?.rfc || 'No disponible' }}</p>
+    <p><strong>Razón Social:</strong> {{ fiscalData?.razonSocial || 'No disponible' }}</p>
+  </div>
+</div>
+
 <app-svg-icon [icon]="'Bus.svg'" [color]="'orange'"></app-svg-icon>
 <p>Dropbox normal</p>
 <app-drop-box [state]="'default'" [icon]="'pdf'"></app-drop-box>
