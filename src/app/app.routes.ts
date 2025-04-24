@@ -4,6 +4,7 @@ import { TicketsPageComponent } from './components/pages/tickets-page/tickets-pa
 import { ProgressBarComponent } from './components/organisms/progress-bar/progress-bar.component';
 import { PageFormComponent } from './components/pages/page-form/page-form.component';
 import { Paso1Component } from './components/pages/1.payment-receipt/paso1/paso1.component';
+import { TicketsUploadedComponent } from './components/pages/1.payment-receipt/tickets-uploaded/tickets-uploaded.component';
 
 export const routes: Routes = [
   { path: '', component: TicketsPageComponent },
@@ -11,5 +12,6 @@ export const routes: Routes = [
   { path: 'payment-receipt', component: ProgressBarComponent },
   { path: 'page-payment', component: PageFormComponent },
   {path:'paso1',component:Paso1Component},
+  {path:'tickets',component:TicketsUploadedComponent},
   { path: '**', redirectTo: '' }
 ];

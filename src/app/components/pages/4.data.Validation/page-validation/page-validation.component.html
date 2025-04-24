@@ -1,0 +1,90 @@
+<div *ngIf="currentView == 'validation'">
+    <app-titles
+        text="Paso Final"
+    ></app-titles>
+    <app-simple-text
+        text="Por favor, revisa los datos de tus tickets y asegúrate de que estén correctos."
+    ></app-simple-text>
+    <app-titles
+        text="1. Validar Comprobantes cargados"
+    ></app-titles>
+    <app-tickets-uploaded-list></app-tickets-uploaded-list>
+    <app-custom-button
+        text="Editar o corregir"
+        icon="Info.svg"
+    ></app-custom-button>
+    <app-titles
+        text="2. Datos Fiscales"
+    ></app-titles>
+    <div>
+        <app-input-field
+            [icon]="'Package.svg'"
+            [label]="'RFC'"
+            [required]="true"
+            [placeholder]="'ABCD123456XX0'">
+        </app-input-field>
+
+        <app-select-field
+            [icon]="'Building.svg'"
+            [label]="'Régimen Fiscal'"
+            [required]="true"
+            [options]="CFDIUsesOptions">
+        </app-select-field>
+
+        <app-select-field
+            [icon]="'BookMarked.svg'"
+            [label]="'Uso CFDI'"
+            [required]="true"
+            [options]="CFDIUsesOptions">
+        </app-select-field>
+    </div>
+    <app-custom-button
+    text="Editar o corregir"
+    icon="Info.svg"
+></app-custom-button>
+    <app-titles
+        text="3. Datos Personales"
+    ></app-titles>
+
+    <app-input-field
+        label="Nombre *"
+        [required]="true"
+        [placeholder]="'Nombre'"
+        icon="User.svg"
+        [isDisabled]="true"
+    ></app-input-field>
+    <app-input-field
+        label="Correo Electronico *"
+        icon="Mail.svg"
+        [isDisabled]="true"
+    ></app-input-field>
+
+    <app-titles
+        text="4. Direccion de la facturacion"
+    ></app-titles>
+    <app-input-field
+        label="Código Postal *"
+        placeholder="Nombre"
+        icon="User.svg"
+        [isDisabled]="true"
+    ></app-input-field>
+
+    <app-check-selector
+        text="Guardar datos fiscales de identificación"
+    ></app-check-selector>
+
+    <app-custom-button
+        text="Generar Factura"
+        type="primary"
+        (click)="onGenerateInvoice()"
+    ></app-custom-button>
+</div>
+
+<app-final-message 
+    *ngIf="currentView === 'final-message'"
+    (reload)="onReload()"
+    (toContactPage)="onContactPage()"
+    (toMyInvoices)="onMyInvoices()"
+    (toHome)="onHome()"
+></app-final-message>
+

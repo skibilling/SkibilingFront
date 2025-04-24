@@ -33,21 +33,35 @@ export class UploadPhotoComponent {
   constructor(private bottomSheet: MatBottomSheet) {}
 
   openCamera():void{
-    this.bottomSheet.open(PhotoTakeComponent, {
+    const bottomSheetRef = this.bottomSheet.open(PhotoTakeComponent, {
       panelClass: 'custom-bottom-sheet',
     });
+
+    bottomSheetRef.afterDismissed().subscribe(result => {
+      if (result && result.file) {
+        this.selectedFile = result.file;
+      }
+    });
   }
+
+  onFileSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedFile = file;
+    }
+  }
+
   onGoBack() {
     this.back.emit();
   }
   
   onSubmit() {
     if (this.selectedFile) {
-      // Aquí procesas el archivo y emites el evento
       this.complete.emit({
         type: 'photo',
         file: this.selectedFile
       });
     }
+    this.onGoBack();
   }
 }
