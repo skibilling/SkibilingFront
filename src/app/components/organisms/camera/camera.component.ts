@@ -15,9 +15,8 @@ export class CameraComponent {
 
   iniciarCamara(): void {
     if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia) {
-      // Accede a la cámara (video)
       navigator.mediaDevices
-        .getUserMedia({ video: true })
+        .getUserMedia({ video: { facingMode: 'user' } }) // Para cámara frontal
         .then((stream: MediaStream) => {
           this.stream = stream;
           const videoElement = this.video.nativeElement as HTMLVideoElement;
