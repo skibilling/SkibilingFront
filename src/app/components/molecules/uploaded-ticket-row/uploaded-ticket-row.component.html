@@ -1,0 +1,41 @@
+<div class="ticket-row" [class.selected]="ticket?.selected">
+  <!-- Agregamos un operador de navegación segura (?) en las propiedades -->
+  <div class="ticket-content" *ngIf="ticket" (click)="onToggleExpand()">
+    <!-- Icono según el tipo -->
+    <div class="ticket-icon">
+      <div class="icon-container" [ngClass]="ticket?.iconType === 'receipt' ? 'Token.svg' : 'Image.svg'">
+        <app-svg-icon *ngIf="ticket?.iconType === 'receipt'" icon="Token.svg"></app-svg-icon>
+        <app-svg-icon *ngIf="ticket?.iconType === 'image'" icon="Image.svg"></app-svg-icon>
+        <app-svg-icon *ngIf="ticket?.iconType === 'food'" icon="Utensils.svg"></app-svg-icon>
+      </div>
+    </div>
+
+    <!-- Información del ticket -->
+    <div class="ticket-info">
+      <span class="ticket-name">{{ ticket?.name }}</span>
+    </div>
+
+    <!-- Estado del ticket -->
+    <div class="ticket-status" [style.background-color]="getStatusColor() + '15'" 
+                               [style.color]="getStatusColor()">
+      {{ ticket?.status }}
+    </div>
+
+    <!-- Botón para expandir/contraer -->
+    <div class="expand-button" >
+      <app-svg-icon [icon]="isExpanded ? 'ChevronUp.svg' : 'ChevronDown.svg'"></app-svg-icon>
+    </div>
+  </div>
+
+  <!-- Contenido expandido (opcional) -->
+  <div class="ticket-expanded" *ngIf="isExpanded && ticket">
+    <div class="ticket-details">
+      <!-- Aquí puedes añadir más información o acciones sobre el ticket -->
+      <p>ID: {{ ticket?.id }}</p>
+      <p>Monto: {{ ticket?.amount }}</p>
+      <p>Descripción: {{ ticket?.description }}</p>
+      <p>Estado: {{ ticket?.status }}</p>
+
+    </div>
+  </div>
+</div>

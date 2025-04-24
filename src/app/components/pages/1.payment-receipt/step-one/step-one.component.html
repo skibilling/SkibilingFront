@@ -53,3 +53,9 @@ type="info"
     (complete)="onComplete($event)">
   </app-upload-manual-token>
 </div>
+<div *ngIf="currentView === 'tickets'" class="modal-container">
+  <app-tickets-uploaded
+  (back)="backToMain()"
+  (advance)="advanceToStepTwo()">
+  </app-tickets-uploaded>
+</div>

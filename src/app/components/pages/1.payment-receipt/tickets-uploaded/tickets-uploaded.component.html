@@ -1,0 +1,26 @@
+<app-titles 
+    text="Tus Comprobantes"
+></app-titles>
+<app-simple-text 
+    text="Valida todos tus comprobantes y su estado,Si quieres
+     agregar mas, haz clic en el boton debajo de la tabla.Para continuar,
+     asegurate de tener al menos un comprobante marcado como 'Valid'"
+></app-simple-text>
+<app-tickets-uploaded-list></app-tickets-uploaded-list>
+
+<app-hint
+    type="info"
+    text="Nota:Debe haber al menos un comprobante  marcado como 'Listo' para poder facturar"
+></app-hint>
+
+<app-custom-button
+    type="tertiary"
+    text="Agregar más comprobantes"
+    (click)="onBack()"
+></app-custom-button>
+
+<app-custom-button
+    type="primary"
+    text="Continuar al siguiente paso"
+    (click)="onComplete()"
+></app-custom-button>

@@ -5,11 +5,12 @@ import { TicketsPageComponent } from './components/pages/tickets-page/tickets-pa
 import { DropBoxComponent } from "./components/atoms/drop-box/drop-box.component";
 import { PruebasComponent } from './components/pages/pruebas/pruebas.component';
 import { LandingComponent } from "./components/pages/landing/landing.component";
+import { TicketsUploadedComponent } from './components/pages/1.payment-receipt/tickets-uploaded/tickets-uploaded.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, InvoicePageComponent, TicketsPageComponent, DropBoxComponent, PruebasComponent, LandingComponent],
+  imports: [RouterOutlet, InvoicePageComponent, TicketsPageComponent, DropBoxComponent, PruebasComponent, LandingComponent,TicketsUploadedComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

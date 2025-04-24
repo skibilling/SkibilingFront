@@ -1,0 +1,52 @@
+<div class="container" *ngIf="!hasError">
+    <app-titles
+        text="Estamos Generando tu(s) facturas(s)!!"
+    ></app-titles>
+    <app-simple-text
+        text="Gracias por usar nuestro servicio"
+    ></app-simple-text>
+
+    <app-svg-icon
+        icon="CircleCheck.svg"
+        color="green"
+        width="100px"
+        height="100px"
+    ></app-svg-icon>
+
+    <app-custom-button
+        type="primary"
+        text="Ver mis facturas"
+        (click)="goToMyInvoices()"
+    ></app-custom-button>
+    <app-custom-button
+        type="secondary"
+        text="Ir a la pagina principal"
+        (click)="goToHome()"
+    ></app-custom-button>
+</div>
+<div class="container" *ngIf="hasError">
+    <app-titles
+        text="Uy Algo Salio Mal"
+    ></app-titles>
+    <app-simple-text
+        text="No pudimos completar la facturacino"
+    ></app-simple-text>
+
+    <app-svg-icon
+        icon="CircleCheck.svg"
+        color="red"
+        width="100px"
+        height="100px"
+    ></app-svg-icon>
+
+    <app-custom-button
+        type="primary"
+        text="Reintentar"
+        (click)="Reload()"
+    ></app-custom-button>
+    <app-custom-button
+        type="secondary"
+        text="Ir a la pagina de contacto"
+        (click)="goToContactPage()"
+    ></app-custom-button>
+</div>

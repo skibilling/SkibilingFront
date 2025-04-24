@@ -34,7 +34,7 @@ export class UploadManualTokenComponent {
         if (this.token.length > 0) {
             console.log('Token enviado:', this.token);
         }
-
+        this.complete.emit();
     }
     onGoBack() {
         this.back.emit();
